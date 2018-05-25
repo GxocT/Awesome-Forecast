@@ -1,0 +1,6 @@
+framework module Pods_Awesome_Forecast {
+  umbrella header "Pods-Awesome Forecast-umbrella.h"
+
+  export *
+  module * { export * }
+}
