@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MainInfo: Decodable {
+struct MainInfo {
     let temp: Float
     let pressure: Float
     let humidity: Float
@@ -16,7 +16,7 @@ struct MainInfo: Decodable {
     let tempMax: Float
 }
 
-extension MainInfo {
+extension MainInfo: Decodable {
     
     enum MainInfoCodingKeys: String, CodingKey {
         case temp

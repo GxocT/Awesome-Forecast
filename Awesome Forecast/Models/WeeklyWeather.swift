@@ -19,9 +19,4 @@ struct City: Decodable {
     let country: String
 }
 
-struct WeeklyItem: Decodable {
-    let dt: Int
-    let main: MainInfo
-    let weather: [Weather]
-    let wind: Wind
-}
+
