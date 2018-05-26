@@ -17,9 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         let networkManager = NetworkManager()
-        networkManager.getWeeklyWeather(city: "Saint Petersburg") { (result) in
-            print("result: \(result)")
+        
+        LocationManager.shared.getCurrentCity { (result) in
+            switch result {
+            case .success(let city):
+                networkManager.getWeeklyWeather(city: city) { (result) in
+                    print("result: \(result)")
+                }
+            case .error(let description):
+                print(description)
+            }
+            
         }
+        
         
         return true
     }

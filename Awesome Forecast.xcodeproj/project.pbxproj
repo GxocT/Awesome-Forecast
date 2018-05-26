@@ -24,6 +24,7 @@
 		4A5F70B820B94BB300CFE35A /* ForecastApi+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70B720B94BB300CFE35A /* ForecastApi+Testing.swift */; };
 		4A5F70BA20B9701500CFE35A /* ResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70B920B9701500CFE35A /* ResponseResult.swift */; };
 		4A5F70BC20B9731900CFE35A /* WeeklyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70BB20B9731900CFE35A /* WeeklyItem.swift */; };
+		4A5F70BE20B97F7A00CFE35A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70BD20B97F7900CFE35A /* LocationManager.swift */; };
 		614EE0B7EA6B50D7F0442D73 /* Pods_Awesome_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0249D71E2EA567ED88ED3A01 /* Pods_Awesome_Forecast.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		4A5F70B720B94BB300CFE35A /* ForecastApi+Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForecastApi+Testing.swift"; sourceTree = "<group>"; };
 		4A5F70B920B9701500CFE35A /* ResponseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseResult.swift; sourceTree = "<group>"; };
 		4A5F70BB20B9731900CFE35A /* WeeklyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyItem.swift; sourceTree = "<group>"; };
+		4A5F70BD20B97F7900CFE35A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		90AAEF3CDFEA6207BCD6C940 /* Pods-Awesome Forecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome Forecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome Forecast/Pods-Awesome Forecast.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 		4A5F708F20B7D61700CFE35A /* Awesome Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				4A5F70BF20B9933000CFE35A /* Location */,
 				4A5F70AD20B93F6900CFE35A /* Network */,
 				4A5F70A220B7DA1300CFE35A /* Models */,
 				4A5F709020B7D61700CFE35A /* AppDelegate.swift */,
@@ -138,6 +141,14 @@
 				4A5F70B520B94B2200CFE35A /* Weekly.json */,
 			);
 			path = StubbedResponses;
+			sourceTree = "<group>";
+		};
+		4A5F70BF20B9933000CFE35A /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				4A5F70BD20B97F7900CFE35A /* LocationManager.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 		E26FB847A01862DE86C85944 /* Frameworks */ = {
@@ -278,6 +289,7 @@
 				4A5F709120B7D61700CFE35A /* AppDelegate.swift in Sources */,
 				4A5F70BA20B9701500CFE35A /* ResponseResult.swift in Sources */,
 				4A5F70AA20B7DEC100CFE35A /* Wind.swift in Sources */,
+				4A5F70BE20B97F7A00CFE35A /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
