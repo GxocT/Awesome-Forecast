@@ -10,10 +10,10 @@ import UIKit
 
 class TabBarBuilder {
     
-    static func build() -> UITabBarController {
+    static func build(networkManager: NetworkManager) -> UITabBarController {
         let tabBarController = UITabBarController()
         
-        let todayViewController = TodayBuilder.buildModule()
+        let todayViewController = TodayBuilder.buildModule(networkManager: networkManager)
         todayViewController.title = "Today"
         
         let weeklyViewController = WeeklyBuilder.buildModule()

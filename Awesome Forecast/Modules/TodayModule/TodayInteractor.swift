@@ -8,8 +8,35 @@
 
 import Foundation
 
-class TodayInteractor: TodayPresenterToInterectorProtocol {
+class TodayInteractor {
     
     weak var presenter: TodayInterectorToPresenterProtocol!
+    
+    private let networkManager: NetworkManager
+    
+    init(networkManager: NetworkManager) {
+        self.networkManager = networkManager
+    }
+}
+
+extension TodayInteractor: TodayPresenterToInterectorProtocol {
+    
+    func loadWeaterData() {
+        LocationManager.shared.getCurrentCity { [weak self] (result) in
+            switch result {
+            case .success(let city):
+                self?.networkManager.getCurrentWeather(city: city) { (result) in
+                    switch result {
+                    case .success(let weather):
+                        self?.presenter.weatherLoaded(weather)
+                    case .error(let error):
+                        self?.presenter.weatherLoadFailed(description: error)
+                    }
+                }
+            case .error(let error):
+                self?.presenter.weatherLoadFailed(description: error)
+            }
+        }
+    }
     
 }

@@ -19,8 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLG-tt-W47">
-                                <rect key="frame" x="131" y="50" width="112" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="lLG-tt-W47">
+                                <rect key="frame" x="20" y="50" width="335" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="Cmj-dj-BQO"/>
                                 </constraints>
@@ -110,6 +110,8 @@
                         <color key="backgroundColor" red="0.96078431372549022" green="0.65098039215686276" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lLG-tt-W47" firstAttribute="top" secondItem="7Pn-lP-gnS" secondAttribute="top" constant="30" id="2fb-Pl-hgw"/>
+                            <constraint firstItem="lLG-tt-W47" firstAttribute="leading" secondItem="7Pn-lP-gnS" secondAttribute="leading" constant="20" id="7Wd-gr-bt1"/>
+                            <constraint firstItem="7Pn-lP-gnS" firstAttribute="trailing" secondItem="lLG-tt-W47" secondAttribute="trailing" constant="20" id="QID-Kb-YiJ"/>
                             <constraint firstItem="7Pn-lP-gnS" firstAttribute="bottom" secondItem="82P-i7-t6l" secondAttribute="bottom" id="RFO-bt-88d"/>
                             <constraint firstItem="82P-i7-t6l" firstAttribute="top" secondItem="lLG-tt-W47" secondAttribute="bottom" id="UEE-cM-Jep"/>
                             <constraint firstItem="lLG-tt-W47" firstAttribute="centerX" secondItem="7Pn-lP-gnS" secondAttribute="centerX" id="Vrr-oc-4Vy"/>
@@ -119,6 +121,13 @@
                         <viewLayoutGuide key="safeArea" id="7Pn-lP-gnS"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Today" id="VUf-Hy-PZ5"/>
+                    <connections>
+                        <outlet property="locationInfoLabel" destination="lLG-tt-W47" id="RgF-L2-9KY"/>
+                        <outlet property="temperatureLabel" destination="swZ-SL-YZ4" id="WDy-n4-EHL"/>
+                        <outlet property="weatherDescriptionLabel" destination="0La-lI-OGq" id="b16-0l-WeY"/>
+                        <outlet property="weatherIconImageView" destination="tYr-De-E1B" id="QoX-zf-VVH"/>
+                        <outlet property="windInfoLabel" destination="Ums-I3-Ppr" id="4vo-YT-5NE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCH-ba-HhW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

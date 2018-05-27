@@ -8,17 +8,22 @@
 
 import Foundation
 
-
-protocol TodayPresenterToViewProtocol: class {
+protocol TodayViewToPresenterProtocol: class {
+    func updateView()
 }
 
-protocol TodayInterectorToPresenterProtocol: class {
+protocol TodayPresenterToViewProtocol: class {
+    func showWeather(locationInfo: String, temperature: String, details: String, wind: String)
+    func showError(_ description: String)
 }
 
 protocol TodayPresenterToInterectorProtocol: class {
+    func loadWeaterData()
 }
 
-protocol TodayViewToPresenterProtocol: class {
+protocol TodayInterectorToPresenterProtocol: class {
+    func weatherLoaded(_ weather: CurrentWeather)
+    func weatherLoadFailed(description: String)
 }
 
 protocol TodayPresenterToRouterProtocol: class {

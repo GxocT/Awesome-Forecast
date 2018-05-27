@@ -8,15 +8,41 @@
 
 import UIKit
 
-class TodayViewController: UIViewController, TodayPresenterToViewProtocol {
+class TodayViewController: UIViewController {
     
     var presenter: TodayViewToPresenterProtocol!
+    
+    @IBOutlet weak var locationInfoLabel: UILabel!
+    @IBOutlet weak var weatherIconImageView: UIImageView!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var weatherDescriptionLabel: UILabel!
+    @IBOutlet weak var windInfoLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        showThrobber(backgroundColor: view.backgroundColor ?? .lightGray)
+        presenter.updateView()
     }
     
+}
 
+extension TodayViewController: TodayPresenterToViewProtocol {
+    
+    func showWeather(locationInfo: String, temperature: String, details: String, wind: String) {
+        hideThrobber()
+        
+        locationInfoLabel.text = locationInfo
+        temperatureLabel.text = temperature
+        weatherDescriptionLabel.text = details
+        windInfoLabel.text = wind
+    }
+    
+    func showError(_ description: String) {
+        hideThrobber()
+        
+        // TODO: Прикрутить показ ошибки
+        print("Error: \(description)")
+    }
+    
 }

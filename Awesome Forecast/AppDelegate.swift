@@ -8,35 +8,23 @@
 
 import UIKit
 
+typealias VoidClosure = () -> ()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    let networkManager = NetworkManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         UIApplication.shared.statusBarStyle = .lightContent
         
-        let tabBarController = TabBarBuilder.build()
+        let tabBarController = TabBarBuilder.build(networkManager: networkManager)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
-    
-        
-        let networkManager = NetworkManager()
-        
-        LocationManager.shared.getCurrentCity { (result) in
-            switch result {
-            case .success(let city):
-                networkManager.getWeeklyWeather(city: city) { (result) in
-                    print("result: \(result)")
-                }
-            case .error(let description):
-                print(description)
-            }
-            
-        }
         
         return true
     }

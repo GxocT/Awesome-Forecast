@@ -10,14 +10,14 @@ import UIKit
 
 final class TodayBuilder {
     
-    static func buildModule() -> TodayViewController {
+    static func buildModule(networkManager: NetworkManager) -> TodayViewController {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(type: TodayViewController.self)
         
         let presenter = TodayPresenter()
         viewController.presenter = presenter
         presenter.view = viewController
         
-        let interactor = TodayInteractor()
+        let interactor = TodayInteractor(networkManager: networkManager)
         presenter.interector = interactor
         interactor.presenter = presenter
         
