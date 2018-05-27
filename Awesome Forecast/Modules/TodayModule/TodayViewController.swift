@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodayViewController: UIViewController {
+class TodayViewController: BaseViewController {
     
     var presenter: TodayViewToPresenterProtocol!
     
@@ -20,6 +20,10 @@ class TodayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         showThrobber(backgroundColor: view.backgroundColor ?? .lightGray)
         presenter.updateView()
@@ -45,4 +49,13 @@ extension TodayViewController: TodayPresenterToViewProtocol {
         print("Error: \(description)")
     }
     
+}
+
+class BaseViewController: UIViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        view.backgroundColor = AppearanceManager.shared.backgroundColor
+    }
 }

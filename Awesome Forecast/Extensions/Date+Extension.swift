@@ -27,4 +27,10 @@ extension Date {
         formatter.dateFormat = "dd MMMM"
         return formatter.string(from: self)
     }
+    
+    func isDay() -> Bool {
+        let hour = Calendar.current.component(.hour, from: Date())
+        
+        return (6..<23).contains(hour)
+    }
 }

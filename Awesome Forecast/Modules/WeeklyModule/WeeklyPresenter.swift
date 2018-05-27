@@ -37,7 +37,7 @@ extension WeeklyPresenter: WeeklyInterectorToPresenterProtocol {
                                       temperature: Int(rawItem.main.temp).temperatureStringPresentation())
         }
         
-        self.view.showWeather(items)
+        self.view.showWeather(items: items, locationInfo: weekly.city.name)
     }
     
     func weatherLoadFailed(description: String) {

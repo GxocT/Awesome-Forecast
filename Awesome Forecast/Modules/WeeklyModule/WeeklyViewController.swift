@@ -8,13 +8,14 @@
 
 import UIKit
 
-class WeeklyViewController: UIViewController {
+class WeeklyViewController: BaseViewController {
     
     var presenter: WeeklyViewToPresenterProtocol!
     
     @IBOutlet weak var tableView: UITableView!
     
     private var cellItems: [WeeklyCellItem] = []
+    private var locationInfo: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +40,20 @@ extension WeeklyViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = WeelkyTableViewHeader()
+        header.title = locationInfo
+        header.bgColor = view.backgroundColor
+        return header
+    }
+    
 }
 
 extension WeeklyViewController: WeeklyPresenterToViewProtocol {
     
-    func showWeather(_ items: [WeeklyCellItem]) {
+    func showWeather(items: [WeeklyCellItem], locationInfo: String) {
         cellItems = items
+        self.locationInfo = locationInfo
         tableView.reloadData()
     }
     
@@ -53,3 +62,4 @@ extension WeeklyViewController: WeeklyPresenterToViewProtocol {
     }
     
 }
+

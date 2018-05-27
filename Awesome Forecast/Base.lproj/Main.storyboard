@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="lLG-tt-W47">
-                                <rect key="frame" x="20" y="50" width="335" height="43"/>
+                                <rect key="frame" x="20" y="70" width="335" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="Cmj-dj-BQO"/>
                                 </constraints>
@@ -29,10 +29,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82P-i7-t6l" userLabel="Container">
-                                <rect key="frame" x="0.0" y="93" width="375" height="574"/>
+                                <rect key="frame" x="0.0" y="113" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8B-wI-I2v">
-                                        <rect key="frame" x="0.0" y="133.5" width="375" height="307"/>
+                                        <rect key="frame" x="0.0" y="123.5" width="375" height="307"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="tYr-De-E1B">
                                                 <rect key="frame" x="132" y="0.0" width="110" height="110"/>
@@ -109,7 +109,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.65098039215686276" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="lLG-tt-W47" firstAttribute="top" secondItem="7Pn-lP-gnS" secondAttribute="top" constant="30" id="2fb-Pl-hgw"/>
+                            <constraint firstItem="lLG-tt-W47" firstAttribute="top" secondItem="7Pn-lP-gnS" secondAttribute="top" constant="50" id="2fb-Pl-hgw"/>
                             <constraint firstItem="lLG-tt-W47" firstAttribute="leading" secondItem="7Pn-lP-gnS" secondAttribute="leading" constant="20" id="7Wd-gr-bt1"/>
                             <constraint firstItem="7Pn-lP-gnS" firstAttribute="trailing" secondItem="lLG-tt-W47" secondAttribute="trailing" constant="20" id="QID-Kb-YiJ"/>
                             <constraint firstItem="7Pn-lP-gnS" firstAttribute="bottom" secondItem="82P-i7-t6l" secondAttribute="bottom" id="RFO-bt-88d"/>
@@ -144,7 +144,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="170" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pno-Tt-ndK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeeklyTableViewCell" id="RFC-8p-mZp" customClass="WeeklyTableViewCell" customModule="Awesome_Forecast" customModuleProvider="target">
@@ -184,7 +184,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moon" translatesAutoresizingMaskIntoConstraints="NO" id="PlO-MV-mrk">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="PlO-MV-mrk">
                                                     <rect key="frame" x="231" y="23" width="34" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="34" id="ae2-Rl-flh"/>
@@ -201,7 +201,7 @@
                                                 <constraint firstItem="e6O-Io-U6O" firstAttribute="leading" secondItem="PlO-MV-mrk" secondAttribute="trailing" id="WFW-Hr-piN"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <viewLayoutGuide key="safeArea" id="2NC-oJ-get"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="6d2-ag-B1R" id="skn-RM-iax"/>
@@ -231,7 +231,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="moon" width="110" height="110"/>
         <image name="sun" width="110" height="110"/>
     </resources>
 </document>

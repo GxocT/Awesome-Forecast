@@ -13,7 +13,7 @@ protocol WeeklyViewToPresenterProtocol: class {
 }
 
 protocol WeeklyPresenterToViewProtocol: class {
-    func showWeather(_ items: [WeeklyCellItem])
+    func showWeather(items: [WeeklyCellItem], locationInfo: String)
     func showError(_ description: String)
 }
 
