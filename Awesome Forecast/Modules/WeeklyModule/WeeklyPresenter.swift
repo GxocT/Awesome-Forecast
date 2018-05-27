@@ -26,14 +26,18 @@ extension WeeklyPresenter: WeeklyViewToPresenterProtocol {
 
 extension WeeklyPresenter: WeeklyInterectorToPresenterProtocol {
     func weatherLoaded(_ weekly: WeeklyWeather) {
-        let items = weekly.list.map { (rawItem) -> WeeklyCellItem in
-            return WeeklyCellItem(date: "23 May",
-                                  dayOfWeek: "Wednesday",
-                                  temperature: Int(rawItem.main.temp).temperatureStringPresentation())
+        
+        let items = weekly.list
+            .filter { (notfilteredItem) -> Bool in
+                return notfilteredItem.date.isMidday()
+            }
+            .map { (rawItem) -> WeeklyCellItem in
+                return WeeklyCellItem(date: rawItem.date.toDayMonthString(),
+                                      dayOfWeek: rawItem.date.dayOfTheWeek()!,
+                                      temperature: Int(rawItem.main.temp).temperatureStringPresentation())
         }
-        DispatchQueue.main.async {
-            self.view.showWeather(items)
-        }
+        
+        self.view.showWeather(items)
     }
     
     func weatherLoadFailed(description: String) {

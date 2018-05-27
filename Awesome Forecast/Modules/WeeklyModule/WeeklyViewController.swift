@@ -18,8 +18,6 @@ class WeeklyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        tableView.register(WeeklyTableViewCell.self, forCellReuseIdentifier: WeeklyTableViewCell.identifier)
         
         presenter.updateView()
     }

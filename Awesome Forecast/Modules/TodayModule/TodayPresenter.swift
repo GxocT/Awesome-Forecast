@@ -8,11 +8,33 @@
 
 import Foundation
 
-
-class TodayPresenter: TodayViewToPresenterProtocol, TodayInterectorToPresenterProtocol {
+class TodayPresenter {
     
     weak var view: TodayPresenterToViewProtocol!
     var interector: TodayPresenterToInterectorProtocol!
     var router: TodayPresenterToRouterProtocol!
+    
+}
+
+extension TodayPresenter: TodayViewToPresenterProtocol {
+    
+    func updateView() {
+        interector.loadWeaterData()
+    }
+    
+}
+
+extension TodayPresenter: TodayInterectorToPresenterProtocol {
+    
+    func weatherLoaded(_ weather: CurrentWeather) {
+        view.showWeather(locationInfo: weather.name,
+                         temperature: Int(weather.main.temp).temperatureStringPresentation(),
+                         details: weather.weather.first!.description,
+                         wind: weather.wind.stringRepresentation())
+    }
+    
+    func weatherLoadFailed(description: String) {
+        view.showError(description)
+    }
     
 }
