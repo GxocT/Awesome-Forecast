@@ -8,16 +8,22 @@
 
 import Foundation
 
-protocol WeeklyPresenterToViewProtocol: class {
+protocol WeeklyViewToPresenterProtocol: class {
+    func updateView()
 }
 
-protocol WeeklyInterectorToPresenterProtocol: class {
+protocol WeeklyPresenterToViewProtocol: class {
+    func showWeather(_ items: [WeeklyCellItem])
+    func showError(_ description: String)
 }
 
 protocol WeeklyPresenterToInterectorProtocol: class {
+    func loadWeaterData()
 }
 
-protocol WeeklyViewToPresenterProtocol: class {
+protocol WeeklyInterectorToPresenterProtocol: class {
+    func weatherLoaded(_ weekly: WeeklyWeather)
+    func weatherLoadFailed(description: String)
 }
 
 protocol WeeklyPresenterToRouterProtocol: class {

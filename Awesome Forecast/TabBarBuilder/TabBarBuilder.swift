@@ -16,7 +16,7 @@ class TabBarBuilder {
         let todayViewController = TodayBuilder.buildModule(networkManager: networkManager)
         todayViewController.title = "Today"
         
-        let weeklyViewController = WeeklyBuilder.buildModule()
+        let weeklyViewController = WeeklyBuilder.buildModule(networkManager: networkManager)
         weeklyViewController.title = "Weekly"
         
         tabBarController.setViewControllers([todayViewController, weeklyViewController], animated: true)

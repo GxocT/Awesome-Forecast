@@ -43,6 +43,8 @@
 		4A5F70E720BACD6C00CFE35A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70E520BACD6B00CFE35A /* ErrorView.swift */; };
 		4A5F70E820BACD6C00CFE35A /* ThrobberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70E620BACD6C00CFE35A /* ThrobberView.swift */; };
 		4A5F70EB20BADF5000CFE35A /* TemperaturePresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70EA20BADF5000CFE35A /* TemperaturePresentable.swift */; };
+		4A5F70F220BAE54B00CFE35A /* WeeklyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70F020BAE54B00CFE35A /* WeeklyTableViewCell.swift */; };
+		4A5F70F520BAEBC100CFE35A /* WeeklyCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70F420BAEBC100CFE35A /* WeeklyCellItem.swift */; };
 		614EE0B7EA6B50D7F0442D73 /* Pods_Awesome_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0249D71E2EA567ED88ED3A01 /* Pods_Awesome_Forecast.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,8 @@
 		4A5F70E520BACD6B00CFE35A /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		4A5F70E620BACD6C00CFE35A /* ThrobberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThrobberView.swift; sourceTree = "<group>"; };
 		4A5F70EA20BADF5000CFE35A /* TemperaturePresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperaturePresentable.swift; sourceTree = "<group>"; };
+		4A5F70F020BAE54B00CFE35A /* WeeklyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewCell.swift; sourceTree = "<group>"; };
+		4A5F70F420BAEBC100CFE35A /* WeeklyCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCellItem.swift; sourceTree = "<group>"; };
 		90AAEF3CDFEA6207BCD6C940 /* Pods-Awesome Forecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome Forecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome Forecast/Pods-Awesome Forecast.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -216,6 +220,7 @@
 		4A5F70CE20BAADFF00CFE35A /* WeeklyModule */ = {
 			isa = PBXGroup;
 			children = (
+				4A5F70ED20BAE4AB00CFE35A /* WeeklyTableViewCell */,
 				4A5F70CF20BAAE1F00CFE35A /* WeeklyViewController.swift */,
 				4A5F70D120BAAE1F00CFE35A /* WeeklyPresenter.swift */,
 				4A5F70D220BAAE2000CFE35A /* WeeklyInteractor.swift */,
@@ -259,6 +264,15 @@
 				4A5F70E620BACD6C00CFE35A /* ThrobberView.swift */,
 			);
 			path = CommonViews;
+			sourceTree = "<group>";
+		};
+		4A5F70ED20BAE4AB00CFE35A /* WeeklyTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4A5F70F020BAE54B00CFE35A /* WeeklyTableViewCell.swift */,
+				4A5F70F420BAEBC100CFE35A /* WeeklyCellItem.swift */,
+			);
+			path = WeeklyTableViewCell;
 			sourceTree = "<group>";
 		};
 		E26FB847A01862DE86C85944 /* Frameworks */ = {
@@ -395,6 +409,7 @@
 				4A5F70E420BACD0B00CFE35A /* UIViewController+Extension.swift in Sources */,
 				4A5F70E720BACD6C00CFE35A /* ErrorView.swift in Sources */,
 				4A5F70EB20BADF5000CFE35A /* TemperaturePresentable.swift in Sources */,
+				4A5F70F220BAE54B00CFE35A /* WeeklyTableViewCell.swift in Sources */,
 				4A5F70CD20BAA04A00CFE35A /* TodayBuilder.swift in Sources */,
 				4A5F70A820B7DE9500CFE35A /* MainInfo.swift in Sources */,
 				4A5F70A620B7DE7400CFE35A /* Weather.swift in Sources */,
@@ -417,6 +432,7 @@
 				4A5F70DD20BAB6B300CFE35A /* WeeklyProtocols.swift in Sources */,
 				4A5F70C920BA982600CFE35A /* TodayRouter.swift in Sources */,
 				4A5F70BE20B97F7A00CFE35A /* LocationManager.swift in Sources */,
+				4A5F70F520BAEBC100CFE35A /* WeeklyCellItem.swift in Sources */,
 				4A5F70DC20BAB6B000CFE35A /* WeeklyRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
