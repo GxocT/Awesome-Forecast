@@ -18,6 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.statusBarStyle = .lightContent
         
+        let tabBarController = TabBarBuilder.build()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+    
+        
         let networkManager = NetworkManager()
         
         LocationManager.shared.getCurrentCity { (result) in
@@ -31,7 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
         }
-        
         
         return true
     }
@@ -60,4 +65,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

@@ -24,6 +24,20 @@
 		4A5F70BA20B9701500CFE35A /* ResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70B920B9701500CFE35A /* ResponseResult.swift */; };
 		4A5F70BC20B9731900CFE35A /* WeeklyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70BB20B9731900CFE35A /* WeeklyItem.swift */; };
 		4A5F70BE20B97F7A00CFE35A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70BD20B97F7900CFE35A /* LocationManager.swift */; };
+		4A5F70C320BA97A800CFE35A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70C220BA97A800CFE35A /* TodayViewController.swift */; };
+		4A5F70C520BA97FE00CFE35A /* TodayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70C420BA97FE00CFE35A /* TodayPresenter.swift */; };
+		4A5F70C720BA981300CFE35A /* TodayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70C620BA981300CFE35A /* TodayInteractor.swift */; };
+		4A5F70C920BA982600CFE35A /* TodayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70C820BA982600CFE35A /* TodayRouter.swift */; };
+		4A5F70CB20BA983B00CFE35A /* TodayProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70CA20BA983B00CFE35A /* TodayProtocols.swift */; };
+		4A5F70CD20BAA04A00CFE35A /* TodayBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70CC20BAA04A00CFE35A /* TodayBuilder.swift */; };
+		4A5F70D720BAB55400CFE35A /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70D620BAB55400CFE35A /* UIStoryboard+Extension.swift */; };
+		4A5F70D820BAB66B00CFE35A /* WeeklyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70D020BAAE1F00CFE35A /* WeeklyBuilder.swift */; };
+		4A5F70D920BAB6A700CFE35A /* WeeklyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70CF20BAAE1F00CFE35A /* WeeklyViewController.swift */; };
+		4A5F70DA20BAB6A900CFE35A /* WeeklyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70D120BAAE1F00CFE35A /* WeeklyPresenter.swift */; };
+		4A5F70DB20BAB6AD00CFE35A /* WeeklyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70D220BAAE2000CFE35A /* WeeklyInteractor.swift */; };
+		4A5F70DC20BAB6B000CFE35A /* WeeklyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70D320BAAE2000CFE35A /* WeeklyRouter.swift */; };
+		4A5F70DD20BAB6B300CFE35A /* WeeklyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70D420BAAE2000CFE35A /* WeeklyProtocols.swift */; };
+		4A5F70E020BAB7FF00CFE35A /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70DF20BAB7FF00CFE35A /* TabBarBuilder.swift */; };
 		614EE0B7EA6B50D7F0442D73 /* Pods_Awesome_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0249D71E2EA567ED88ED3A01 /* Pods_Awesome_Forecast.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +63,20 @@
 		4A5F70B920B9701500CFE35A /* ResponseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseResult.swift; sourceTree = "<group>"; };
 		4A5F70BB20B9731900CFE35A /* WeeklyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyItem.swift; sourceTree = "<group>"; };
 		4A5F70BD20B97F7900CFE35A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		4A5F70C220BA97A800CFE35A /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		4A5F70C420BA97FE00CFE35A /* TodayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPresenter.swift; sourceTree = "<group>"; };
+		4A5F70C620BA981300CFE35A /* TodayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayInteractor.swift; sourceTree = "<group>"; };
+		4A5F70C820BA982600CFE35A /* TodayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRouter.swift; sourceTree = "<group>"; };
+		4A5F70CA20BA983B00CFE35A /* TodayProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayProtocols.swift; sourceTree = "<group>"; };
+		4A5F70CC20BAA04A00CFE35A /* TodayBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayBuilder.swift; sourceTree = "<group>"; };
+		4A5F70CF20BAAE1F00CFE35A /* WeeklyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyViewController.swift; sourceTree = "<group>"; };
+		4A5F70D020BAAE1F00CFE35A /* WeeklyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBuilder.swift; sourceTree = "<group>"; };
+		4A5F70D120BAAE1F00CFE35A /* WeeklyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyPresenter.swift; sourceTree = "<group>"; };
+		4A5F70D220BAAE2000CFE35A /* WeeklyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyInteractor.swift; sourceTree = "<group>"; };
+		4A5F70D320BAAE2000CFE35A /* WeeklyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyRouter.swift; sourceTree = "<group>"; };
+		4A5F70D420BAAE2000CFE35A /* WeeklyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyProtocols.swift; sourceTree = "<group>"; };
+		4A5F70D620BAB55400CFE35A /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
+		4A5F70DF20BAB7FF00CFE35A /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
 		90AAEF3CDFEA6207BCD6C940 /* Pods-Awesome Forecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome Forecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome Forecast/Pods-Awesome Forecast.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,9 +122,12 @@
 		4A5F708F20B7D61700CFE35A /* Awesome Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				4A5F70C020BA976B00CFE35A /* Modules */,
+				4A5F70A220B7DA1300CFE35A /* Models */,
+				4A5F70DE20BAB7E800CFE35A /* TabBarBuilder */,
 				4A5F70BF20B9933000CFE35A /* Location */,
 				4A5F70AD20B93F6900CFE35A /* Network */,
-				4A5F70A220B7DA1300CFE35A /* Models */,
+				4A5F70D520BAB53D00CFE35A /* Extensions */,
 				4A5F709020B7D61700CFE35A /* AppDelegate.swift */,
 				4A5F709420B7D61700CFE35A /* Main.storyboard */,
 				4A5F709720B7D61800CFE35A /* Assets.xcassets */,
@@ -146,6 +177,57 @@
 				4A5F70BD20B97F7900CFE35A /* LocationManager.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		4A5F70C020BA976B00CFE35A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4A5F70C120BA977B00CFE35A /* TodayModule */,
+				4A5F70CE20BAADFF00CFE35A /* WeeklyModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4A5F70C120BA977B00CFE35A /* TodayModule */ = {
+			isa = PBXGroup;
+			children = (
+				4A5F70C220BA97A800CFE35A /* TodayViewController.swift */,
+				4A5F70C420BA97FE00CFE35A /* TodayPresenter.swift */,
+				4A5F70C620BA981300CFE35A /* TodayInteractor.swift */,
+				4A5F70C820BA982600CFE35A /* TodayRouter.swift */,
+				4A5F70CA20BA983B00CFE35A /* TodayProtocols.swift */,
+				4A5F70CC20BAA04A00CFE35A /* TodayBuilder.swift */,
+			);
+			path = TodayModule;
+			sourceTree = "<group>";
+		};
+		4A5F70CE20BAADFF00CFE35A /* WeeklyModule */ = {
+			isa = PBXGroup;
+			children = (
+				4A5F70CF20BAAE1F00CFE35A /* WeeklyViewController.swift */,
+				4A5F70D120BAAE1F00CFE35A /* WeeklyPresenter.swift */,
+				4A5F70D220BAAE2000CFE35A /* WeeklyInteractor.swift */,
+				4A5F70D320BAAE2000CFE35A /* WeeklyRouter.swift */,
+				4A5F70D420BAAE2000CFE35A /* WeeklyProtocols.swift */,
+				4A5F70D020BAAE1F00CFE35A /* WeeklyBuilder.swift */,
+			);
+			path = WeeklyModule;
+			sourceTree = "<group>";
+		};
+		4A5F70D520BAB53D00CFE35A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A5F70D620BAB55400CFE35A /* UIStoryboard+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4A5F70DE20BAB7E800CFE35A /* TabBarBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				4A5F70DF20BAB7FF00CFE35A /* TabBarBuilder.swift */,
+			);
+			path = TabBarBuilder;
 			sourceTree = "<group>";
 		};
 		E26FB847A01862DE86C85944 /* Frameworks */ = {
@@ -274,18 +356,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A5F70D920BAB6A700CFE35A /* WeeklyViewController.swift in Sources */,
 				4A5F70B120B944A300CFE35A /* NetworkManager.swift in Sources */,
+				4A5F70D720BAB55400CFE35A /* UIStoryboard+Extension.swift in Sources */,
+				4A5F70D820BAB66B00CFE35A /* WeeklyBuilder.swift in Sources */,
+				4A5F70CD20BAA04A00CFE35A /* TodayBuilder.swift in Sources */,
 				4A5F70A820B7DE9500CFE35A /* MainInfo.swift in Sources */,
 				4A5F70A620B7DE7400CFE35A /* Weather.swift in Sources */,
+				4A5F70E020BAB7FF00CFE35A /* TabBarBuilder.swift in Sources */,
+				4A5F70DA20BAB6A900CFE35A /* WeeklyPresenter.swift in Sources */,
+				4A5F70C720BA981300CFE35A /* TodayInteractor.swift in Sources */,
 				4A5F70A420B7DAA400CFE35A /* CurrentWeather.swift in Sources */,
+				4A5F70C520BA97FE00CFE35A /* TodayPresenter.swift in Sources */,
 				4A5F70AC20B7E01E00CFE35A /* WeeklyWeather.swift in Sources */,
 				4A5F70B820B94BB300CFE35A /* ForecastApi+Testing.swift in Sources */,
 				4A5F70BC20B9731900CFE35A /* WeeklyItem.swift in Sources */,
+				4A5F70DB20BAB6AD00CFE35A /* WeeklyInteractor.swift in Sources */,
+				4A5F70C320BA97A800CFE35A /* TodayViewController.swift in Sources */,
+				4A5F70CB20BA983B00CFE35A /* TodayProtocols.swift in Sources */,
 				4A5F70AF20B93FA800CFE35A /* ForecastApi.swift in Sources */,
 				4A5F709120B7D61700CFE35A /* AppDelegate.swift in Sources */,
 				4A5F70BA20B9701500CFE35A /* ResponseResult.swift in Sources */,
 				4A5F70AA20B7DEC100CFE35A /* Wind.swift in Sources */,
+				4A5F70DD20BAB6B300CFE35A /* WeeklyProtocols.swift in Sources */,
+				4A5F70C920BA982600CFE35A /* TodayRouter.swift in Sources */,
 				4A5F70BE20B97F7A00CFE35A /* LocationManager.swift in Sources */,
+				4A5F70DC20BAB6B000CFE35A /* WeeklyRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

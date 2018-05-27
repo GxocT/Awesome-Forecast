@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="De7-ks-iSL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,9 +14,9 @@
         <!--Today-->
         <scene sceneID="MSE-nw-QHJ">
             <objects>
-                <viewController title="Today" id="AoA-Ut-pAR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TodayViewController" title="Today" id="AoA-Ut-pAR" customClass="TodayViewController" customModule="Awesome_Forecast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gE1-Hc-uFp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLG-tt-W47">
@@ -29,10 +29,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82P-i7-t6l" userLabel="Container">
-                                <rect key="frame" x="0.0" y="93" width="375" height="525"/>
+                                <rect key="frame" x="0.0" y="93" width="375" height="574"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8B-wI-I2v">
-                                        <rect key="frame" x="0.0" y="109" width="375" height="307"/>
+                                        <rect key="frame" x="0.0" y="133.5" width="375" height="307"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="tYr-De-E1B">
                                                 <rect key="frame" x="132" y="0.0" width="110" height="110"/>
@@ -84,7 +84,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Ums-I3-Ppr" firstAttribute="top" secondItem="8cD-7g-xIy" secondAttribute="bottom" constant="5.5" id="HYs-I3-DVl"/>
-                                            <constraint firstItem="8cD-7g-xIy" firstAttribute="top" secondItem="0La-lI-OGq" secondAttribute="bottom" constant="29" id="PVe-cP-j8C"/>
+                                            <constraint firstItem="8cD-7g-xIy" firstAttribute="top" secondItem="0La-lI-OGq" secondAttribute="bottom" priority="750" constant="29" id="PVe-cP-j8C"/>
                                             <constraint firstItem="0La-lI-OGq" firstAttribute="centerX" secondItem="a8B-wI-I2v" secondAttribute="centerX" id="R5q-mX-JSc"/>
                                             <constraint firstItem="tYr-De-E1B" firstAttribute="top" secondItem="a8B-wI-I2v" secondAttribute="top" id="W1A-6U-paM"/>
                                             <constraint firstItem="tYr-De-E1B" firstAttribute="centerX" secondItem="a8B-wI-I2v" secondAttribute="centerX" id="YXm-GU-lFo"/>
@@ -122,14 +122,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCH-ba-HhW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4210" y="-141"/>
+            <point key="canvasLocation" x="3170" y="-257"/>
         </scene>
         <!--Weekly-->
         <scene sceneID="nTm-qk-Nez">
             <objects>
-                <viewController title="Weekly" id="O4b-ss-R2D" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeeklyViewController" title="Weekly" id="O4b-ss-R2D" customClass="WeeklyViewController" customModule="Awesome_Forecast" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gCy-Z4-KMU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="170" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pno-Tt-ndK">
@@ -204,25 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCU-TF-jG0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4209" y="554"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="IJ9-Rr-2D3">
-            <objects>
-                <tabBarController id="De7-ks-iSL" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="I6B-mm-70s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="AoA-Ut-pAR" kind="relationship" relationship="viewControllers" id="sQi-pf-JlX"/>
-                        <segue destination="O4b-ss-R2D" kind="relationship" relationship="viewControllers" id="img-4Y-Kp6"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="duY-8I-WOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3126" y="187"/>
+            <point key="canvasLocation" x="3974" y="-258"/>
         </scene>
     </scenes>
     <resources>
