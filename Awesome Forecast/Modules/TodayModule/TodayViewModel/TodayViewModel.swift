@@ -12,6 +12,6 @@ struct TodayViewModel {
     let locationInfo: String
     let weatherIcon: UIImage?
     let temperature: String
-    let details: String
+    let details: String?
     let windInfo: String?
 }

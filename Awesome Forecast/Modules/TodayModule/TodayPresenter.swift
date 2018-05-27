@@ -28,9 +28,9 @@ extension TodayPresenter: TodayInterectorToPresenterProtocol {
     
     func weatherLoaded(weather: CurrentWeather, locationInfo: String) {
         let viewModel = TodayViewModel(locationInfo: locationInfo,
-                                       weatherIcon: WeatherType(id: weather.weather!.id).getImage(),
+                                       weatherIcon: WeatherType(id: weather.weather?.id).getImage(),
                                        temperature: Int(weather.main.temp).temperatureStringPresentation(),
-                                       details: weather.weather!.description,
+                                       details: weather.weather?.description,
                                        windInfo: weather.wind?.stringRepresentation())
         view.showWeather(viewModel: viewModel)
     }

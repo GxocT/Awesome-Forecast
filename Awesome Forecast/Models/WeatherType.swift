@@ -15,16 +15,17 @@ enum WeatherType {
     case snow
     case clear
     case clouds
+    case unknown
     
-    init(id: Int) {
+    init(id: Int?) {
         switch id {
-        case 200..<300:             self = .thunderstorm
-        case 300..<400, 500..<600:  self = .rain
-        case 600..<700:             self = .snow
-        case 700..<800:             self = .atmosphere
-        case 801...809:             self = .clouds
-        default:                    self = .clear
-            
+        case .some(200..<300):                      self = .thunderstorm
+        case .some(300..<400), .some(500..<600):    self = .rain
+        case .some(600..<700):                      self = .snow
+        case .some(700..<800):                      self = .atmosphere
+        case .some(801...809):                      self = .clouds
+        case .some(800):                            self = .clear
+        default:                                    self = .unknown
         }
     }
     
@@ -41,6 +42,7 @@ enum WeatherType {
             } else {
                 return UIImage(named: "sun")
             }
+        case .unknown: return UIImage(named: "unknown")
         }
     }
 }
