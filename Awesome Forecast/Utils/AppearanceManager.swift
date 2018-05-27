@@ -17,6 +17,6 @@ final class AppearanceManager {
     var backgroundColor: UIColor {
         let day: UIColor = #colorLiteral(red: 0.9739639163, green: 0.7061158419, blue: 0.1748842001, alpha: 1)
         let night: UIColor = #colorLiteral(red: 0.3527560234, green: 0.6400019526, blue: 0.9096098542, alpha: 1)
-        return day//Date().isDay() ? day : night
+        return Date().isDay() ? day : night
     }
 }

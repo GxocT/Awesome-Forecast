@@ -13,7 +13,7 @@ protocol TodayViewToPresenterProtocol: class {
 }
 
 protocol TodayPresenterToViewProtocol: class {
-    func showWeather(locationInfo: String, temperature: String, details: String, wind: String)
+    func showWeather(viewModel: TodayViewModel)
     func showError(_ description: String)
 }
 
@@ -22,7 +22,7 @@ protocol TodayPresenterToInterectorProtocol: class {
 }
 
 protocol TodayInterectorToPresenterProtocol: class {
-    func weatherLoaded(_ weather: CurrentWeather)
+    func weatherLoaded(weather: CurrentWeather, locationInfo: String)
     func weatherLoadFailed(description: String)
 }
 

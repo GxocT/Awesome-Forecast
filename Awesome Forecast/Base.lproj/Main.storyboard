@@ -127,6 +127,7 @@
                         <outlet property="weatherDescriptionLabel" destination="0La-lI-OGq" id="b16-0l-WeY"/>
                         <outlet property="weatherIconImageView" destination="tYr-De-E1B" id="QoX-zf-VVH"/>
                         <outlet property="windInfoLabel" destination="Ums-I3-Ppr" id="4vo-YT-5NE"/>
+                        <outlet property="windTitle" destination="8cD-7g-xIy" id="Kl8-ul-TXM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCH-ba-HhW" userLabel="First Responder" sceneMemberID="firstResponder"/>

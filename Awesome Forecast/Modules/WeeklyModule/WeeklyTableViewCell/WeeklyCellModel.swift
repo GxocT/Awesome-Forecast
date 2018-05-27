@@ -1,5 +1,5 @@
 //
-//  WeeklyCellItem.swift
+//  WeeklyCellModel.swift
 //  Awesome Forecast
 //
 //  Created by Sergey Bendak on 27/05/2018.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct WeeklyCellItem {
+struct WeeklyCellModel {
     let date: String
     let dayOfWeek: String
     let temperature: String
-    // TODO: добавить иконку
+    let weatherType: WeatherType
 }

@@ -33,7 +33,7 @@ class ThrobberView: UIView {
     }
     
     private func setup() {
-        activityIndivator  = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityIndivator  = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         addSubview(activityIndivator)
         activityIndivator.translatesAutoresizingMaskIntoConstraints = false
         

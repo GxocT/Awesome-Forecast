@@ -39,10 +39,12 @@ enum Direction: String {
 }
 
 struct Wind {
-    let speed: Float
-    let direction: Direction
+    let speed: Float?
+    let direction: Direction?
     
-    func stringRepresentation() -> String {
+    func stringRepresentation() -> String? {
+        guard let speed = speed, let direction = direction else { return nil }
+        
         return String(format: "%@ %.1f m/s", direction.rawValue, speed)
     }
 }
@@ -58,7 +60,10 @@ extension Wind: Decodable {
         let container = try decoder.container(keyedBy: WindCodingKeys.self)
         
         speed = try container.decode(Float.self, forKey: .speed)
-        let degrees = try container.decode(Float.self, forKey: .deg)
-        direction = Direction(degrees: degrees)
+        if let degrees = try container.decodeIfPresent(Float.self, forKey: .deg) {
+            direction = Direction(degrees: degrees)
+        } else {
+            direction = nil
+        }
     }
 }

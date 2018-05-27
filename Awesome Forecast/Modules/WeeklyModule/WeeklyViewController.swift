@@ -14,12 +14,13 @@ class WeeklyViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var cellItems: [WeeklyCellItem] = []
+    private var cellItems: [WeeklyCellModel] = []
     private var locationInfo: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        showThrobber()
         presenter.updateView()
     }
     
@@ -51,10 +52,11 @@ extension WeeklyViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension WeeklyViewController: WeeklyPresenterToViewProtocol {
     
-    func showWeather(items: [WeeklyCellItem], locationInfo: String) {
+    func showWeather(items: [WeeklyCellModel], locationInfo: String) {
         cellItems = items
         self.locationInfo = locationInfo
         tableView.reloadData()
+        hideThrobber()
     }
     
     func showError(_ description: String) {

@@ -31,10 +31,11 @@ extension WeeklyPresenter: WeeklyInterectorToPresenterProtocol {
             .filter { (notfilteredItem) -> Bool in
                 return notfilteredItem.date.isMidday()
             }
-            .map { (rawItem) -> WeeklyCellItem in
-                return WeeklyCellItem(date: rawItem.date.toDayMonthString(),
+            .map { (rawItem) -> WeeklyCellModel in
+                return WeeklyCellModel(date: rawItem.date.toDayMonthString(),
                                       dayOfWeek: rawItem.date.dayOfTheWeek()!,
-                                      temperature: Int(rawItem.main.temp).temperatureStringPresentation())
+                                      temperature: Int(rawItem.main.temp).temperatureStringPresentation(),
+                                      weatherType: WeatherType(id: rawItem.weather.first!.id))
         }
         
         self.view.showWeather(items: items, locationInfo: weekly.city.name)

@@ -17,7 +17,8 @@ class TodayViewController: BaseViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
     @IBOutlet weak var windInfoLabel: UILabel!
-
+    @IBOutlet weak var windTitle: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -25,7 +26,7 @@ class TodayViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        showThrobber(backgroundColor: view.backgroundColor ?? .lightGray)
+        showThrobber()
         presenter.updateView()
     }
     
@@ -33,13 +34,15 @@ class TodayViewController: BaseViewController {
 
 extension TodayViewController: TodayPresenterToViewProtocol {
     
-    func showWeather(locationInfo: String, temperature: String, details: String, wind: String) {
+    func showWeather(viewModel: TodayViewModel) {
         hideThrobber()
         
-        locationInfoLabel.text = locationInfo
-        temperatureLabel.text = temperature
-        weatherDescriptionLabel.text = details
-        windInfoLabel.text = wind
+        locationInfoLabel.text = viewModel.locationInfo
+        temperatureLabel.text = viewModel.temperature
+        weatherDescriptionLabel.text = viewModel.details
+        weatherIconImageView.image = viewModel.weatherIcon
+        windInfoLabel.text = viewModel.windInfo
+        windTitle.isHidden = viewModel.windInfo == nil
     }
     
     func showError(_ description: String) {

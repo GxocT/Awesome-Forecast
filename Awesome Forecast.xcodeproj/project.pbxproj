@@ -44,7 +44,9 @@
 		4A5F70E820BACD6C00CFE35A /* ThrobberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70E620BACD6C00CFE35A /* ThrobberView.swift */; };
 		4A5F70EB20BADF5000CFE35A /* TemperaturePresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70EA20BADF5000CFE35A /* TemperaturePresentable.swift */; };
 		4A5F70F220BAE54B00CFE35A /* WeeklyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70F020BAE54B00CFE35A /* WeeklyTableViewCell.swift */; };
-		4A5F70F520BAEBC100CFE35A /* WeeklyCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70F420BAEBC100CFE35A /* WeeklyCellItem.swift */; };
+		4A5F70F520BAEBC100CFE35A /* WeeklyCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F70F420BAEBC100CFE35A /* WeeklyCellModel.swift */; };
+		4A68836C20BB570600E64034 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A68836B20BB570600E64034 /* WeatherType.swift */; };
+		4A68836F20BB5ADF00E64034 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A68836E20BB5ADF00E64034 /* TodayViewModel.swift */; };
 		4AFEC8CB20BB3EFF00AF8F38 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFEC8CA20BB3EFF00AF8F38 /* Date+Extension.swift */; };
 		4AFEC8CE20BB46F100AF8F38 /* WeelkyTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFEC8CD20BB46F100AF8F38 /* WeelkyTableViewHeader.swift */; };
 		4AFEC8D020BB4B6700AF8F38 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFEC8CF20BB4B6700AF8F38 /* AppearanceManager.swift */; };
@@ -93,7 +95,9 @@
 		4A5F70E620BACD6C00CFE35A /* ThrobberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThrobberView.swift; sourceTree = "<group>"; };
 		4A5F70EA20BADF5000CFE35A /* TemperaturePresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperaturePresentable.swift; sourceTree = "<group>"; };
 		4A5F70F020BAE54B00CFE35A /* WeeklyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewCell.swift; sourceTree = "<group>"; };
-		4A5F70F420BAEBC100CFE35A /* WeeklyCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCellItem.swift; sourceTree = "<group>"; };
+		4A5F70F420BAEBC100CFE35A /* WeeklyCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCellModel.swift; sourceTree = "<group>"; };
+		4A68836B20BB570600E64034 /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
+		4A68836E20BB5ADF00E64034 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		4AFEC8CA20BB3EFF00AF8F38 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		4AFEC8CD20BB46F100AF8F38 /* WeelkyTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeelkyTableViewHeader.swift; sourceTree = "<group>"; };
 		4AFEC8CF20BB4B6700AF8F38 /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceManager.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				4A5F70A520B7DE7400CFE35A /* Weather.swift */,
 				4A5F70A720B7DE9500CFE35A /* MainInfo.swift */,
 				4A5F70A920B7DEC100CFE35A /* Wind.swift */,
+				4A68836B20BB570600E64034 /* WeatherType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 		4A5F70C120BA977B00CFE35A /* TodayModule */ = {
 			isa = PBXGroup;
 			children = (
+				4A68836D20BB5AC200E64034 /* TodayViewModel */,
 				4A5F70C220BA97A800CFE35A /* TodayViewController.swift */,
 				4A5F70C420BA97FE00CFE35A /* TodayPresenter.swift */,
 				4A5F70C620BA981300CFE35A /* TodayInteractor.swift */,
@@ -279,9 +285,17 @@
 			isa = PBXGroup;
 			children = (
 				4A5F70F020BAE54B00CFE35A /* WeeklyTableViewCell.swift */,
-				4A5F70F420BAEBC100CFE35A /* WeeklyCellItem.swift */,
+				4A5F70F420BAEBC100CFE35A /* WeeklyCellModel.swift */,
 			);
 			path = WeeklyTableViewCell;
+			sourceTree = "<group>";
+		};
+		4A68836D20BB5AC200E64034 /* TodayViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4A68836E20BB5ADF00E64034 /* TodayViewModel.swift */,
+			);
+			path = TodayViewModel;
 			sourceTree = "<group>";
 		};
 		4AFEC8CC20BB46E100AF8F38 /* WeelkyTableViewHeader */ = {
@@ -426,6 +440,7 @@
 				4A5F70E420BACD0B00CFE35A /* UIViewController+Extension.swift in Sources */,
 				4A5F70E720BACD6C00CFE35A /* ErrorView.swift in Sources */,
 				4A5F70EB20BADF5000CFE35A /* TemperaturePresentable.swift in Sources */,
+				4A68836C20BB570600E64034 /* WeatherType.swift in Sources */,
 				4A5F70F220BAE54B00CFE35A /* WeeklyTableViewCell.swift in Sources */,
 				4AFEC8CB20BB3EFF00AF8F38 /* Date+Extension.swift in Sources */,
 				4A5F70CD20BAA04A00CFE35A /* TodayBuilder.swift in Sources */,
@@ -437,6 +452,7 @@
 				4A5F70C720BA981300CFE35A /* TodayInteractor.swift in Sources */,
 				4A5F70A420B7DAA400CFE35A /* CurrentWeather.swift in Sources */,
 				4A5F70C520BA97FE00CFE35A /* TodayPresenter.swift in Sources */,
+				4A68836F20BB5ADF00E64034 /* TodayViewModel.swift in Sources */,
 				4A5F70E320BACD0B00CFE35A /* UIView+Extension.swift in Sources */,
 				4AFEC8CE20BB46F100AF8F38 /* WeelkyTableViewHeader.swift in Sources */,
 				4A5F70AC20B7E01E00CFE35A /* WeeklyWeather.swift in Sources */,
@@ -452,7 +468,7 @@
 				4A5F70DD20BAB6B300CFE35A /* WeeklyProtocols.swift in Sources */,
 				4A5F70C920BA982600CFE35A /* TodayRouter.swift in Sources */,
 				4A5F70BE20B97F7A00CFE35A /* LocationManager.swift in Sources */,
-				4A5F70F520BAEBC100CFE35A /* WeeklyCellItem.swift in Sources */,
+				4A5F70F520BAEBC100CFE35A /* WeeklyCellModel.swift in Sources */,
 				4A5F70DC20BAB6B000CFE35A /* WeeklyRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

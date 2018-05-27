@@ -10,11 +10,11 @@ import UIKit
 
 extension UIViewController {
     
-    func showThrobber(backgroundColor: UIColor = .clear) {
+    func showThrobber(backgroundColor: UIColor? = nil) {
         guard !view.hasSubviewOfType(ThrobberView.self) else { return }
         
         let throbberView = ThrobberView()
-        throbberView.backgroundColor = backgroundColor
+        throbberView.backgroundColor = view.backgroundColor
         throbberView.start()
         view.addSubview(throbberView)
         throbberView.fillSuperview()

@@ -26,11 +26,13 @@ extension TodayPresenter: TodayViewToPresenterProtocol {
 
 extension TodayPresenter: TodayInterectorToPresenterProtocol {
     
-    func weatherLoaded(_ weather: CurrentWeather) {
-        view.showWeather(locationInfo: weather.name,
-                         temperature: Int(weather.main.temp).temperatureStringPresentation(),
-                         details: weather.weather.first!.description,
-                         wind: weather.wind.stringRepresentation())
+    func weatherLoaded(weather: CurrentWeather, locationInfo: String) {
+        let viewModel = TodayViewModel(locationInfo: locationInfo,
+                                       weatherIcon: WeatherType(id: weather.weather!.id).getImage(),
+                                       temperature: Int(weather.main.temp).temperatureStringPresentation(),
+                                       details: weather.weather!.description,
+                                       windInfo: weather.wind?.stringRepresentation())
+        view.showWeather(viewModel: viewModel)
     }
     
     func weatherLoadFailed(description: String) {

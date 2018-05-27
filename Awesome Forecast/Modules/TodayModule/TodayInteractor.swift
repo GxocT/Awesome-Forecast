@@ -28,7 +28,7 @@ extension TodayInteractor: TodayPresenterToInterectorProtocol {
                 self?.networkManager.getCurrentWeather(city: city) { (result) in
                     switch result {
                     case .success(let weather):
-                        self?.presenter.weatherLoaded(weather)
+                        self?.presenter.weatherLoaded(weather: weather, locationInfo: city)
                     case .error(let error):
                         self?.presenter.weatherLoadFailed(description: error)
                     }

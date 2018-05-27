@@ -8,9 +8,27 @@
 
 import Foundation
 
-struct CurrentWeather: Decodable {
-    let name: String
-    let weather: [Weather]
+struct CurrentWeather {
+    let weather: Weather?
     let main: MainInfo
-    let wind: Wind
+    let wind: Wind?
+}
+
+extension CurrentWeather: Decodable {
+    
+    enum CurrentWeatherCodingKey: String, CodingKey {
+        case weather
+        case main
+        case wind
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CurrentWeatherCodingKey.self)
+        
+        main = try container.decode(MainInfo.self, forKey: .main)
+        wind = try container.decodeIfPresent(Wind.self, forKey: .wind)
+        
+        let weatherList = try container.decode(Array<Weather>.self, forKey: .weather)
+        weather = weatherList.first
+    }
 }

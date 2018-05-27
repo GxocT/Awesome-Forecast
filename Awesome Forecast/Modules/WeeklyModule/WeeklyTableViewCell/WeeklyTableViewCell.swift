@@ -19,10 +19,11 @@ class WeeklyTableViewCell: UITableViewCell {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var weatherIconImageView: UIImageView!
     
-    func updateWithItem(_ item: WeeklyCellItem) {
+    func updateWithItem(_ item: WeeklyCellModel) {
         dateLabel.text = item.date
         dayOfWeekLabel.text = item.dayOfWeek
         temperatureLabel.text = item.temperature
+        weatherIconImageView.image = item.weatherType.getImage(isDependOnTime: false)
     }
 
     override func awakeFromNib() {
