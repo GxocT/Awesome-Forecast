@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A3D556920BC7716003784F2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D556820BC7716003784F2 /* ProfileViewController.swift */; };
 		4A5F709120B7D61700CFE35A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F709020B7D61700CFE35A /* AppDelegate.swift */; };
 		4A5F709620B7D61700CFE35A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5F709420B7D61700CFE35A /* Main.storyboard */; };
 		4A5F709820B7D61800CFE35A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5F709720B7D61800CFE35A /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		0249D71E2EA567ED88ED3A01 /* Pods_Awesome_Forecast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Awesome_Forecast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BADFF3F72D42984C7601122 /* Pods-Awesome Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome Forecast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome Forecast/Pods-Awesome Forecast.debug.xcconfig"; sourceTree = "<group>"; };
+		4A3D556820BC7716003784F2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4A5F708D20B7D61700CFE35A /* Awesome Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awesome Forecast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5F709020B7D61700CFE35A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A5F709520B7D61700CFE35A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 				90AAEF3CDFEA6207BCD6C940 /* Pods-Awesome Forecast.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4A3D556720BC76DA003784F2 /* ProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				4A3D556820BC7716003784F2 /* ProfileViewController.swift */,
+			);
+			path = ProfileModule;
 			sourceTree = "<group>";
 		};
 		4A5F708420B7D61700CFE35A = {
@@ -209,6 +219,7 @@
 		4A5F70C020BA976B00CFE35A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4A3D556720BC76DA003784F2 /* ProfileModule */,
 				4A5F70C120BA977B00CFE35A /* TodayModule */,
 				4A5F70CE20BAADFF00CFE35A /* WeeklyModule */,
 			);
@@ -393,12 +404,18 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Awesome Forecast/Pods-Awesome Forecast-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
@@ -468,6 +485,7 @@
 				4A5F70DD20BAB6B300CFE35A /* WeeklyProtocols.swift in Sources */,
 				4A5F70C920BA982600CFE35A /* TodayRouter.swift in Sources */,
 				4A5F70BE20B97F7A00CFE35A /* LocationManager.swift in Sources */,
+				4A3D556920BC7716003784F2 /* ProfileViewController.swift in Sources */,
 				4A5F70F520BAEBC100CFE35A /* WeeklyCellModel.swift in Sources */,
 				4A5F70DC20BAB6B000CFE35A /* WeeklyRouter.swift in Sources */,
 			);

@@ -7,5 +7,6 @@ target 'Awesome Forecast' do
 
   # Pods for Awesome Forecast
   pod 'Moya', '~> 11.0'
+  pod 'FBSDKLoginKit'
 
 end

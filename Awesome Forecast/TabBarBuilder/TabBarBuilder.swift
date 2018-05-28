@@ -19,7 +19,10 @@ class TabBarBuilder {
         let weeklyViewController = WeeklyBuilder.buildModule(networkManager: networkManager)
         weeklyViewController.title = "Weekly"
         
-        tabBarController.setViewControllers([todayViewController, weeklyViewController], animated: true)
+        let profileViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(type: ProfileViewController.self)
+        profileViewController.title = "Profile"
+        
+        tabBarController.setViewControllers([todayViewController, weeklyViewController, profileViewController], animated: true)
         
         return tabBarController
     }
