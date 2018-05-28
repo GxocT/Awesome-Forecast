@@ -15,6 +15,11 @@
 		4A3D557420BC89B0003784F2 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D557320BC89B0003784F2 /* LoginProtocols.swift */; };
 		4A3D557620BC89C1003784F2 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D557520BC89C1003784F2 /* LoginBuilder.swift */; };
 		4A3D557B20BC93C5003784F2 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D557A20BC93C5003784F2 /* ApplicationManager.swift */; };
+		4A3D558120BCA375003784F2 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D557C20BCA373003784F2 /* ProfileInteractor.swift */; };
+		4A3D558220BCA375003784F2 /* ProfileProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D557D20BCA374003784F2 /* ProfileProtocols.swift */; };
+		4A3D558320BCA375003784F2 /* ProfileBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D557E20BCA374003784F2 /* ProfileBuilder.swift */; };
+		4A3D558420BCA375003784F2 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D557F20BCA374003784F2 /* ProfilePresenter.swift */; };
+		4A3D558520BCA375003784F2 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D558020BCA375003784F2 /* ProfileRouter.swift */; };
 		4A5F709120B7D61700CFE35A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F709020B7D61700CFE35A /* AppDelegate.swift */; };
 		4A5F709620B7D61700CFE35A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5F709420B7D61700CFE35A /* Main.storyboard */; };
 		4A5F709820B7D61800CFE35A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5F709720B7D61800CFE35A /* Assets.xcassets */; };
@@ -72,6 +77,11 @@
 		4A3D557320BC89B0003784F2 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		4A3D557520BC89C1003784F2 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
 		4A3D557A20BC93C5003784F2 /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
+		4A3D557C20BCA373003784F2 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		4A3D557D20BCA374003784F2 /* ProfileProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocols.swift; sourceTree = "<group>"; };
+		4A3D557E20BCA374003784F2 /* ProfileBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBuilder.swift; sourceTree = "<group>"; };
+		4A3D557F20BCA374003784F2 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		4A3D558020BCA375003784F2 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		4A5F708D20B7D61700CFE35A /* Awesome Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awesome Forecast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5F709020B7D61700CFE35A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A5F709520B7D61700CFE35A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -145,6 +155,11 @@
 			isa = PBXGroup;
 			children = (
 				4A3D556820BC7716003784F2 /* ProfileViewController.swift */,
+				4A3D557F20BCA374003784F2 /* ProfilePresenter.swift */,
+				4A3D557C20BCA373003784F2 /* ProfileInteractor.swift */,
+				4A3D558020BCA375003784F2 /* ProfileRouter.swift */,
+				4A3D557D20BCA374003784F2 /* ProfileProtocols.swift */,
+				4A3D557E20BCA374003784F2 /* ProfileBuilder.swift */,
 			);
 			path = ProfileModule;
 			sourceTree = "<group>";
@@ -482,6 +497,7 @@
 				4A5F70D920BAB6A700CFE35A /* WeeklyViewController.swift in Sources */,
 				4A3D557020BC895F003784F2 /* LoginInteractor.swift in Sources */,
 				4A5F70B120B944A300CFE35A /* NetworkManager.swift in Sources */,
+				4A3D558420BCA375003784F2 /* ProfilePresenter.swift in Sources */,
 				4A5F70E820BACD6C00CFE35A /* ThrobberView.swift in Sources */,
 				4A5F70D720BAB55400CFE35A /* UIStoryboard+Extension.swift in Sources */,
 				4A5F70D820BAB66B00CFE35A /* WeeklyBuilder.swift in Sources */,
@@ -500,6 +516,7 @@
 				4A5F70E020BAB7FF00CFE35A /* TabBarBuilder.swift in Sources */,
 				4A5F70DA20BAB6A900CFE35A /* WeeklyPresenter.swift in Sources */,
 				4A5F70C720BA981300CFE35A /* TodayInteractor.swift in Sources */,
+				4A3D558520BCA375003784F2 /* ProfileRouter.swift in Sources */,
 				4A3D557420BC89B0003784F2 /* LoginProtocols.swift in Sources */,
 				4A5F70A420B7DAA400CFE35A /* CurrentWeather.swift in Sources */,
 				4A5F70C520BA97FE00CFE35A /* TodayPresenter.swift in Sources */,
@@ -508,6 +525,7 @@
 				4AFEC8CE20BB46F100AF8F38 /* WeelkyTableViewHeader.swift in Sources */,
 				4A5F70AC20B7E01E00CFE35A /* WeeklyWeather.swift in Sources */,
 				4A5F70B820B94BB300CFE35A /* ForecastApi+Testing.swift in Sources */,
+				4A3D558120BCA375003784F2 /* ProfileInteractor.swift in Sources */,
 				4A5F70BC20B9731900CFE35A /* WeeklyItem.swift in Sources */,
 				4A5F70DB20BAB6AD00CFE35A /* WeeklyInteractor.swift in Sources */,
 				4A5F70C320BA97A800CFE35A /* TodayViewController.swift in Sources */,
@@ -521,7 +539,9 @@
 				4A5F70C920BA982600CFE35A /* TodayRouter.swift in Sources */,
 				4A5F70BE20B97F7A00CFE35A /* LocationManager.swift in Sources */,
 				4A3D556920BC7716003784F2 /* ProfileViewController.swift in Sources */,
+				4A3D558320BCA375003784F2 /* ProfileBuilder.swift in Sources */,
 				4A3D557620BC89C1003784F2 /* LoginBuilder.swift in Sources */,
+				4A3D558220BCA375003784F2 /* ProfileProtocols.swift in Sources */,
 				4A5F70F520BAEBC100CFE35A /* WeeklyCellModel.swift in Sources */,
 				4A5F70DC20BAB6B000CFE35A /* WeeklyRouter.swift in Sources */,
 			);

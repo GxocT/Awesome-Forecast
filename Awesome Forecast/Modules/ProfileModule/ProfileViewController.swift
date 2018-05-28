@@ -7,13 +7,36 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 class ProfileViewController: BaseViewController {
+    
+    var presenter: ProfileViewToPresenterProtocol!
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profileImageView: FBSDKProfilePictureView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        presenter.updateView()
     }
+    
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        presenter.didTapLogout()
+    }
+    
+}
 
+extension ProfileViewController: ProfilePresenterToViewProtocol {
+    
+    func showProfile(name: String, id: String) {
+        nameLabel.text = name
+        profileImageView.profileID = id
+    }
+    
+    func showError(_ description: String) {
+        print("Error: \(description)")
+    }
+    
 }

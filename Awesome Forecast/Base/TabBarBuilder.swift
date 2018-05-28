@@ -21,7 +21,7 @@ enum TabBarBuilder {
         let weeklyViewController = WeeklyBuilder.buildModule(networkManager: networkManager)
         weeklyViewController.title = "Weekly"
         
-        let profileViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(type: ProfileViewController.self)
+        let profileViewController = ProfileBuilder.buildModule()
         profileViewController.title = "Profile"
         
         switch self {
