@@ -30,8 +30,8 @@ extension ProfilePresenter: ProfileViewToPresenterProtocol {
 
 extension ProfilePresenter: ProfileInterectorToPresenterProtocol {
     
-    func didLoadProfileSuccessfully(name: String, id: String) {
-        view.showProfile(name: name, id: id)
+    func didLoadProfileSuccessfully(_ profile: Profile) {
+        view.showProfile(name: profile.name, id: profile.id)
     }
     
     func didFailedWihtError(_ description: String) {

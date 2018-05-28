@@ -12,6 +12,7 @@ class ApplicationManager {
     
     private var networkManager = NetworkManager()
     private var authService = FacebookAuthService()
+    private var profileService = ProfileService()
     
     private var rootViewController: UIViewController? {
         didSet {
@@ -40,11 +41,11 @@ class ApplicationManager {
     }
     
     func showAuthorizedScreens() {
-        rootViewController = TabBarBuilder.authorised.build(networkManager: networkManager, authService: authService)
+        rootViewController = TabBarBuilder.authorised.build(networkManager: networkManager, authService: authService, profileService: profileService)
     }
     
     func showGuestScreens() {
-        rootViewController = TabBarBuilder.guest.build(networkManager: networkManager, authService: authService)
+        rootViewController = TabBarBuilder.guest.build(networkManager: networkManager, authService: authService, profileService: profileService)
     }
     
     func showLoginScreen() {

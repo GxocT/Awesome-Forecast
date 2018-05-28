@@ -7,28 +7,17 @@
 //
 
 import Foundation
-import FBSDKCoreKit
 
 class ProfileInteractor {
     
     weak var presenter: ProfileInterectorToPresenterProtocol!
     
     private var authService: AuthService
+    private var profileService: ProfileService
     
-    init(authService: AuthService) {
+    init(authService: AuthService, profileService: ProfileService) {
         self.authService = authService
-    }
-    
-    private func processError(_ error: Error?) {
-        var description = "Unknown error."
-        if let error = error {
-            description = error.localizedDescription
-        }
-        presenter.didFailedWihtError(description)
-    }
-    
-    private func processResult(_ profile: FBSDKProfile) {
-        presenter.didLoadProfileSuccessfully(name: profile.name, id: profile.userID)
+        self.profileService = profileService
     }
     
 }
@@ -36,13 +25,13 @@ class ProfileInteractor {
 extension ProfileInteractor: ProfilePresenterToInterectorProtocol {
     
     func loadProfile() {
-        FBSDKProfile.loadCurrentProfile { [weak self] (profile, error) in
-            guard let profile = profile else {
-                self?.processError(error)
-                return
+        profileService.loadProfileInfo { [weak self] (result) in
+            switch result {
+            case .success(let profile):
+                self?.presenter.didLoadProfileSuccessfully(profile)
+            case .error(let description):
+                self?.presenter.didFailedWihtError(description)
             }
-            
-            self?.processResult(profile)
         }
     }
     

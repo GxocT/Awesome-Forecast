@@ -12,7 +12,7 @@ enum TabBarBuilder {
     case authorised
     case guest
     
-    func build(networkManager: NetworkManager, authService: AuthService) -> UITabBarController {
+    func build(networkManager: NetworkManager, authService: AuthService, profileService: ProfileService) -> UITabBarController {
         let tabBarController = UITabBarController()
         
         let todayViewController = TodayBuilder.buildModule(networkManager: networkManager)
@@ -23,7 +23,7 @@ enum TabBarBuilder {
         
         switch self {
         case .authorised:
-            let profileViewController = ProfileBuilder.buildModule(authService: authService)
+            let profileViewController = ProfileBuilder.buildModule(authService: authService, pofileService: profileService)
             profileViewController.title = "Profile"
             
             tabBarController.setViewControllers([todayViewController, weeklyViewController, profileViewController], animated: true)
