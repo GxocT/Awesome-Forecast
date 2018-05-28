@@ -20,6 +20,10 @@ class LoginViewController: UIViewController {
         presenter.didTapLogin()
     }
     
+    @IBAction func guestButtonTapped(_ sender: Any) {
+        presenter.didTapGuest()
+    }
+    
 }
 
 extension LoginViewController: LoginPresenterToViewProtocol {

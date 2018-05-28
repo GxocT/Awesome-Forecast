@@ -141,7 +141,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBj-tn-Sj3">
-                                <rect key="frame" x="83" y="576" width="209" height="41"/>
+                                <rect key="frame" x="83" y="505" width="209" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="oDQ-H4-yab"/>
                                 </constraints>
@@ -151,11 +151,26 @@
                                     <action selector="loginButtonTapped:" destination="u3z-9k-IYd" eventType="touchUpInside" id="XQI-Bm-YPz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCR-3j-GD0">
+                                <rect key="frame" x="95.5" y="576" width="184" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="qNj-dN-k3Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <state key="normal" title="Continue as guest">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="guestButtonTapped:" destination="u3z-9k-IYd" eventType="touchUpInside" id="oxx-AY-k5R"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7qS-yN-uhG" firstAttribute="bottom" secondItem="QBj-tn-Sj3" secondAttribute="bottom" constant="50" id="cTl-3V-1an"/>
+                            <constraint firstItem="BCR-3j-GD0" firstAttribute="top" secondItem="QBj-tn-Sj3" secondAttribute="bottom" constant="30" id="LCX-aX-1jY"/>
+                            <constraint firstItem="7qS-yN-uhG" firstAttribute="bottom" secondItem="BCR-3j-GD0" secondAttribute="bottom" constant="50" id="oAj-xz-WNb"/>
                             <constraint firstItem="QBj-tn-Sj3" firstAttribute="centerX" secondItem="7qS-yN-uhG" secondAttribute="centerX" id="wai-iw-Jwg"/>
+                            <constraint firstItem="BCR-3j-GD0" firstAttribute="centerX" secondItem="7qS-yN-uhG" secondAttribute="centerX" id="yLo-pp-Dmv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7qS-yN-uhG"/>
                     </view>

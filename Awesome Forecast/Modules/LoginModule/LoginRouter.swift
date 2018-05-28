@@ -11,11 +11,11 @@ import Foundation
 class LoginRouter: LoginPresenterToRouterProtocol {
     
     func openAuthorizedScreen() {
-        
+        ApplicationManager.shared.showAuthorizedScreens()
     }
     
     func openGuestScreen() {
-        
+        ApplicationManager.shared.showGuestScreens()
     }
     
     
