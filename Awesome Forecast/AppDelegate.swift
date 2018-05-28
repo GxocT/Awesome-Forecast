@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tabBarController = TabBarBuilder.build(networkManager: networkManager)
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = tabBarController
+        window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(type: LoginViewController.self)//tabBarController
         window?.makeKeyAndVisible()
         
         return true

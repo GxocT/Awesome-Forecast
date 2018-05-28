@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="lLG-tt-W47">
-                                <rect key="frame" x="20" y="70" width="335" height="43"/>
+                                <rect key="frame" x="131.5" y="70" width="112" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="Cmj-dj-BQO"/>
                                 </constraints>
@@ -110,8 +110,6 @@
                         <color key="backgroundColor" red="0.96078431372549022" green="0.65098039215686276" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="lLG-tt-W47" firstAttribute="top" secondItem="7Pn-lP-gnS" secondAttribute="top" constant="50" id="2fb-Pl-hgw"/>
-                            <constraint firstItem="lLG-tt-W47" firstAttribute="leading" secondItem="7Pn-lP-gnS" secondAttribute="leading" constant="20" id="7Wd-gr-bt1"/>
-                            <constraint firstItem="7Pn-lP-gnS" firstAttribute="trailing" secondItem="lLG-tt-W47" secondAttribute="trailing" constant="20" id="QID-Kb-YiJ"/>
                             <constraint firstItem="7Pn-lP-gnS" firstAttribute="bottom" secondItem="82P-i7-t6l" secondAttribute="bottom" id="RFO-bt-88d"/>
                             <constraint firstItem="82P-i7-t6l" firstAttribute="top" secondItem="lLG-tt-W47" secondAttribute="bottom" id="UEE-cM-Jep"/>
                             <constraint firstItem="lLG-tt-W47" firstAttribute="centerX" secondItem="7Pn-lP-gnS" secondAttribute="centerX" id="Vrr-oc-4Vy"/>
@@ -133,6 +131,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCH-ba-HhW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3170" y="-257"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="z2Q-FN-vkZ">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="u3z-9k-IYd" customClass="LoginViewController" customModule="Awesome_Forecast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bJv-vb-8tj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBj-tn-Sj3">
+                                <rect key="frame" x="83" y="576" width="209" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="oDQ-H4-yab"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <state key="normal" title="Login with Facebook"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="u3z-9k-IYd" eventType="touchUpInside" id="XQI-Bm-YPz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7qS-yN-uhG" firstAttribute="bottom" secondItem="QBj-tn-Sj3" secondAttribute="bottom" constant="50" id="cTl-3V-1an"/>
+                            <constraint firstItem="QBj-tn-Sj3" firstAttribute="centerX" secondItem="7qS-yN-uhG" secondAttribute="centerX" id="wai-iw-Jwg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7qS-yN-uhG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5es-Kh-Uiv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2401" y="-259"/>
         </scene>
         <!--Weekly-->
         <scene sceneID="nTm-qk-Nez">
@@ -244,9 +274,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSi-yH-83N">
-                                <rect key="frame" x="127.5" y="562" width="120" height="51"/>
+                                <rect key="frame" x="140" y="562" width="95" height="51"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="vvJ-jT-zxI"/>
                                     <constraint firstAttribute="height" constant="51" id="x8M-VV-Uao"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="32"/>
