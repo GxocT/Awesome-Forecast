@@ -10,14 +10,14 @@ import UIKit
 
 class LoginBuilder {
     
-    static func buildModule() -> LoginViewController {
+    static func buildModule(with authService: AuthService) -> LoginViewController {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(type: LoginViewController.self)
         
         let presenter = LoginPresenter()
         viewController.presenter = presenter
         presenter.view = viewController
         
-        let interactor = LoginInteractor()
+        let interactor = LoginInteractor(authService: authService)
         presenter.interector = interactor
         interactor.presenter = presenter
         

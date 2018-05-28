@@ -40,15 +40,15 @@ class ApplicationManager {
     }
     
     func showAuthorizedScreens() {
-        rootViewController = TabBarBuilder.authorised.build(with: networkManager)
+        rootViewController = TabBarBuilder.authorised.build(networkManager: networkManager, authService: authService)
     }
     
     func showGuestScreens() {
-        rootViewController = TabBarBuilder.guest.build(with: networkManager)
+        rootViewController = TabBarBuilder.guest.build(networkManager: networkManager, authService: authService)
     }
     
     func showLoginScreen() {
-        rootViewController = LoginBuilder.buildModule()
+        rootViewController = LoginBuilder.buildModule(with: authService)
     }
     
 }

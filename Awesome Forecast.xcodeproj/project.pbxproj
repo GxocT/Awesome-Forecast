@@ -184,10 +184,10 @@
 		4A3D557720BC934C003784F2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				4A3D558820BCB559003784F2 /* Authorization */,
 				4A3D557A20BC93C5003784F2 /* ApplicationManager.swift */,
 				4AFEC8CF20BB4B6700AF8F38 /* AppearanceManager.swift */,
 				4A5F70DF20BAB7FF00CFE35A /* TabBarBuilder.swift */,
+				4A3D558820BCB559003784F2 /* Authorization */,
 				4A5F70BF20B9933000CFE35A /* Location */,
 				4A5F70AD20B93F6900CFE35A /* Network */,
 			);

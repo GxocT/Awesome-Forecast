@@ -19,6 +19,7 @@ class ProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        showThrobber()
         presenter.updateView()
     }
     
@@ -31,6 +32,8 @@ class ProfileViewController: BaseViewController {
 extension ProfileViewController: ProfilePresenterToViewProtocol {
     
     func showProfile(name: String, id: String) {
+        hideThrobber()
+        
         nameLabel.text = name
         profileImageView.profileID = id
     }

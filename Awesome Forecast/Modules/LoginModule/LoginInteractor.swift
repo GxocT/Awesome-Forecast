@@ -13,26 +13,23 @@ class LoginInteractor {
     
     weak var presenter: LoginInterectorToPresenterProtocol!
     
+    private let authService: AuthService
+    
+    init(authService: AuthService) {
+        self.authService = authService
+    }
+    
 }
 
 extension LoginInteractor: LoginPresenterToInterectorProtocol {
     
     func tryToLogin() {
-        let login = FBSDKLoginManager()
-        login.logIn(withReadPermissions: ["public_profile"],from: nil) { [weak self] (result, error) in
-            guard let result = result else {
-                var description = "Unknown error"
-                if let error = error {
-                    description = "Error: \(error.localizedDescription)"
-                }
-                self?.presenter.didFailWithError(description)
-                return
-            }
-            
-            if result.isCancelled {
-                print("Cancelled")
-            } else {
-                self?.presenter.didLoginSuccessfully()
+        authService.login { (result) in
+            switch result {
+            case .success(_):
+                self.presenter.didLoginSuccessfully()
+            case .error(let description):
+                self.presenter.didFailWithError(description)
             }
         }
     }

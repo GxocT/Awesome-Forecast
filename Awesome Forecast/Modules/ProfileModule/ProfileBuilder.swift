@@ -10,14 +10,14 @@ import UIKit
 
 class ProfileBuilder {
     
-    static func buildModule() -> ProfileViewController {
+    static func buildModule(authService: AuthService) -> ProfileViewController {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(type: ProfileViewController.self)
         
         let presenter = ProfilePresenter()
         viewController.presenter = presenter
         presenter.view = viewController
         
-        let interactor = ProfileInteractor()
+        let interactor = ProfileInteractor(authService: authService)
         presenter.interector = interactor
         interactor.presenter = presenter
         

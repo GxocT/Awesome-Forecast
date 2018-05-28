@@ -20,11 +20,13 @@ protocol ProfilePresenterToViewProtocol: class {
 
 protocol ProfilePresenterToInterectorProtocol: class {
     func loadProfile()
+    func logout()
 }
 
 protocol ProfileInterectorToPresenterProtocol: class {
     func didLoadProfileSuccessfully(name: String, id: String)
     func didFailedWihtError(_ description: String)
+    func didLogout()
 }
 
 protocol ProfilePresenterToRouterProtocol: class {

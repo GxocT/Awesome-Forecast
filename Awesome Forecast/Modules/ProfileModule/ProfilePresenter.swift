@@ -23,7 +23,7 @@ extension ProfilePresenter: ProfileViewToPresenterProtocol {
     }
     
     func didTapLogout() {
-        router.openLoginScreen()
+        interector.logout()
     }
     
 }
@@ -36,6 +36,10 @@ extension ProfilePresenter: ProfileInterectorToPresenterProtocol {
     
     func didFailedWihtError(_ description: String) {
         view.showError(description)
+    }
+    
+    func didLogout() {
+        router.openLoginScreen()
     }
     
 }

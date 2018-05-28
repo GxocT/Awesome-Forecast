@@ -13,6 +13,12 @@ class ProfileInteractor {
     
     weak var presenter: ProfileInterectorToPresenterProtocol!
     
+    private var authService: AuthService
+    
+    init(authService: AuthService) {
+        self.authService = authService
+    }
+    
     private func processError(_ error: Error?) {
         var description = "Unknown error."
         if let error = error {
@@ -38,6 +44,11 @@ extension ProfileInteractor: ProfilePresenterToInterectorProtocol {
             
             self?.processResult(profile)
         }
+    }
+    
+    func logout() {
+        authService.logout()
+        presenter.didLogout()
     }
 
 }
