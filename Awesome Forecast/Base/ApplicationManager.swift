@@ -8,19 +8,10 @@
 
 import UIKit
 
-import FBSDKLoginKit
-
-class AuthManager {
-    
-    var isAuthorized: Bool {
-        return FBSDKAccessToken.current() != nil
-    }
-}
-
 class ApplicationManager {
     
     private var networkManager = NetworkManager()
-    private var authManager = AuthManager()
+    private var authService = FacebookAuthService()
     
     private var rootViewController: UIViewController? {
         didSet {
@@ -41,7 +32,7 @@ class ApplicationManager {
     func getStart() {
         appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
         
-        if authManager.isAuthorized {
+        if authService.isAuthorized {
             showAuthorizedScreens()
         } else {
             showLoginScreen()

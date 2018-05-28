@@ -20,6 +20,8 @@
 		4A3D558320BCA375003784F2 /* ProfileBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D557E20BCA374003784F2 /* ProfileBuilder.swift */; };
 		4A3D558420BCA375003784F2 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D557F20BCA374003784F2 /* ProfilePresenter.swift */; };
 		4A3D558520BCA375003784F2 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D558020BCA375003784F2 /* ProfileRouter.swift */; };
+		4A3D558720BCB54E003784F2 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D558620BCB54E003784F2 /* AuthService.swift */; };
+		4A3D558A20BCB5EF003784F2 /* FacebookAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D558920BCB5EF003784F2 /* FacebookAuthService.swift */; };
 		4A5F709120B7D61700CFE35A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F709020B7D61700CFE35A /* AppDelegate.swift */; };
 		4A5F709620B7D61700CFE35A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5F709420B7D61700CFE35A /* Main.storyboard */; };
 		4A5F709820B7D61800CFE35A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5F709720B7D61800CFE35A /* Assets.xcassets */; };
@@ -82,6 +84,8 @@
 		4A3D557E20BCA374003784F2 /* ProfileBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBuilder.swift; sourceTree = "<group>"; };
 		4A3D557F20BCA374003784F2 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		4A3D558020BCA375003784F2 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		4A3D558620BCB54E003784F2 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		4A3D558920BCB5EF003784F2 /* FacebookAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuthService.swift; sourceTree = "<group>"; };
 		4A5F708D20B7D61700CFE35A /* Awesome Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awesome Forecast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5F709020B7D61700CFE35A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A5F709520B7D61700CFE35A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 		4A3D557720BC934C003784F2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				4A3D558820BCB559003784F2 /* Authorization */,
 				4A3D557A20BC93C5003784F2 /* ApplicationManager.swift */,
 				4AFEC8CF20BB4B6700AF8F38 /* AppearanceManager.swift */,
 				4A5F70DF20BAB7FF00CFE35A /* TabBarBuilder.swift */,
@@ -187,6 +192,15 @@
 				4A5F70AD20B93F6900CFE35A /* Network */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		4A3D558820BCB559003784F2 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				4A3D558620BCB54E003784F2 /* AuthService.swift */,
+				4A3D558920BCB5EF003784F2 /* FacebookAuthService.swift */,
+			);
+			path = Authorization;
 			sourceTree = "<group>";
 		};
 		4A5F708420B7D61700CFE35A = {
@@ -520,7 +534,9 @@
 				4A3D557420BC89B0003784F2 /* LoginProtocols.swift in Sources */,
 				4A5F70A420B7DAA400CFE35A /* CurrentWeather.swift in Sources */,
 				4A5F70C520BA97FE00CFE35A /* TodayPresenter.swift in Sources */,
+				4A3D558720BCB54E003784F2 /* AuthService.swift in Sources */,
 				4A68836F20BB5ADF00E64034 /* TodayViewModel.swift in Sources */,
+				4A3D558A20BCB5EF003784F2 /* FacebookAuthService.swift in Sources */,
 				4A5F70E320BACD0B00CFE35A /* UIView+Extension.swift in Sources */,
 				4AFEC8CE20BB46F100AF8F38 /* WeelkyTableViewHeader.swift in Sources */,
 				4A5F70AC20B7E01E00CFE35A /* WeeklyWeather.swift in Sources */,
