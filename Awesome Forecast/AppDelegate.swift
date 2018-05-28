@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    let applicationManager = ApplicationManager()
+    
     let networkManager = NetworkManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -24,10 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.statusBarStyle = .lightContent
         
-        let tabBarController = TabBarBuilder.build(networkManager: networkManager)
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(type: LoginViewController.self)//tabBarController
-        window?.makeKeyAndVisible()
+        applicationManager.getStart()
         
         return true
     }

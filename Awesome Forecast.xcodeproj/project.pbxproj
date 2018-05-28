@@ -14,6 +14,7 @@
 		4A3D557220BC898C003784F2 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D557120BC898C003784F2 /* LoginRouter.swift */; };
 		4A3D557420BC89B0003784F2 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D557320BC89B0003784F2 /* LoginProtocols.swift */; };
 		4A3D557620BC89C1003784F2 /* LoginBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D557520BC89C1003784F2 /* LoginBuilder.swift */; };
+		4A3D557B20BC93C5003784F2 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D557A20BC93C5003784F2 /* ApplicationManager.swift */; };
 		4A5F709120B7D61700CFE35A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F709020B7D61700CFE35A /* AppDelegate.swift */; };
 		4A5F709620B7D61700CFE35A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5F709420B7D61700CFE35A /* Main.storyboard */; };
 		4A5F709820B7D61800CFE35A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5F709720B7D61800CFE35A /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		4A3D557120BC898C003784F2 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		4A3D557320BC89B0003784F2 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		4A3D557520BC89C1003784F2 /* LoginBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBuilder.swift; sourceTree = "<group>"; };
+		4A3D557A20BC93C5003784F2 /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
 		4A5F708D20B7D61700CFE35A /* Awesome Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awesome Forecast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5F709020B7D61700CFE35A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A5F709520B7D61700CFE35A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -160,6 +162,18 @@
 			path = LoginModule;
 			sourceTree = "<group>";
 		};
+		4A3D557720BC934C003784F2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4A3D557A20BC93C5003784F2 /* ApplicationManager.swift */,
+				4AFEC8CF20BB4B6700AF8F38 /* AppearanceManager.swift */,
+				4A5F70DF20BAB7FF00CFE35A /* TabBarBuilder.swift */,
+				4A5F70BF20B9933000CFE35A /* Location */,
+				4A5F70AD20B93F6900CFE35A /* Network */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		4A5F708420B7D61700CFE35A = {
 			isa = PBXGroup;
 			children = (
@@ -181,11 +195,9 @@
 		4A5F708F20B7D61700CFE35A /* Awesome Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				4A3D557720BC934C003784F2 /* Base */,
 				4A5F70C020BA976B00CFE35A /* Modules */,
 				4A5F70A220B7DA1300CFE35A /* Models */,
-				4A5F70DE20BAB7E800CFE35A /* TabBarBuilder */,
-				4A5F70BF20B9933000CFE35A /* Location */,
-				4A5F70AD20B93F6900CFE35A /* Network */,
 				4A5F70D520BAB53D00CFE35A /* Extensions */,
 				4A5F70EC20BAE12D00CFE35A /* CommonViews */,
 				4A5F70E920BADF3700CFE35A /* Utils */,
@@ -292,18 +304,9 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		4A5F70DE20BAB7E800CFE35A /* TabBarBuilder */ = {
-			isa = PBXGroup;
-			children = (
-				4A5F70DF20BAB7FF00CFE35A /* TabBarBuilder.swift */,
-			);
-			path = TabBarBuilder;
-			sourceTree = "<group>";
-		};
 		4A5F70E920BADF3700CFE35A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				4AFEC8CF20BB4B6700AF8F38 /* AppearanceManager.swift */,
 				4A5F70EA20BADF5000CFE35A /* TemperaturePresentable.swift */,
 			);
 			path = Utils;
@@ -485,6 +488,7 @@
 				4A3D557220BC898C003784F2 /* LoginRouter.swift in Sources */,
 				4A5F70E420BACD0B00CFE35A /* UIViewController+Extension.swift in Sources */,
 				4A5F70E720BACD6C00CFE35A /* ErrorView.swift in Sources */,
+				4A3D557B20BC93C5003784F2 /* ApplicationManager.swift in Sources */,
 				4A5F70EB20BADF5000CFE35A /* TemperaturePresentable.swift in Sources */,
 				4A68836C20BB570600E64034 /* WeatherType.swift in Sources */,
 				4A5F70F220BAE54B00CFE35A /* WeeklyTableViewCell.swift in Sources */,

@@ -8,9 +8,11 @@
 
 import UIKit
 
-class TabBarBuilder {
+enum TabBarBuilder {
+    case authorised
+    case guest
     
-    static func build(networkManager: NetworkManager) -> UITabBarController {
+    func build(with networkManager: NetworkManager) -> UITabBarController {
         let tabBarController = UITabBarController()
         
         let todayViewController = TodayBuilder.buildModule(networkManager: networkManager)
@@ -22,9 +24,13 @@ class TabBarBuilder {
         let profileViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(type: ProfileViewController.self)
         profileViewController.title = "Profile"
         
-        tabBarController.setViewControllers([todayViewController, weeklyViewController, profileViewController], animated: true)
-        
-        return tabBarController
+        switch self {
+        case .authorised:
+            tabBarController.setViewControllers([todayViewController, weeklyViewController, profileViewController], animated: true)
+            return tabBarController
+        case .guest:
+            tabBarController.setViewControllers([todayViewController, weeklyViewController], animated: true)
+            return tabBarController
+        }
     }
-    
 }
