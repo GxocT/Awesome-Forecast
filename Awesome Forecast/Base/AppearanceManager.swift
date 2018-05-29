@@ -12,11 +12,28 @@ final class AppearanceManager {
     
     static var shared = AppearanceManager()
     
+    private struct Colors {
+        static let day: UIColor = #colorLiteral(red: 0.9739639163, green: 0.7061158419, blue: 0.1748842001, alpha: 1)
+        static let night: UIColor = #colorLiteral(red: 0.3527560234, green: 0.6400019526, blue: 0.9096098542, alpha: 1)
+    }
+    
     private init() {}
     
     var backgroundColor: UIColor {
-        let day: UIColor = #colorLiteral(red: 0.9739639163, green: 0.7061158419, blue: 0.1748842001, alpha: 1)
-        let night: UIColor = #colorLiteral(red: 0.3527560234, green: 0.6400019526, blue: 0.9096098542, alpha: 1)
-        return Date().isDay() ? day : night
+        return primaryColor
+    }
+    
+    func apply() {
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        UITabBar.appearance().tintColor = invertPrimaryColor
+    }
+    
+    var primaryColor: UIColor {
+        return Date().isDay() ? Colors.day : Colors.night
+    }
+    
+    var invertPrimaryColor: UIColor {
+        return Date().isDay() ? Colors.night : Colors.day
     }
 }

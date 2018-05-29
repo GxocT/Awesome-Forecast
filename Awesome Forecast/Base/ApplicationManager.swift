@@ -31,6 +31,8 @@ class ApplicationManager {
     }
     
     func getStart() {
+        AppearanceManager.shared.apply()
+        
         appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
         
         if authService.isAuthorized {

@@ -24,8 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        UIApplication.shared.statusBarStyle = .lightContent
-        
         applicationManager.getStart()
         
         return true
