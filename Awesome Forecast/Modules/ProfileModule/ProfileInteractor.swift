@@ -29,8 +29,8 @@ extension ProfileInteractor: ProfilePresenterToInterectorProtocol {
             switch result {
             case .success(let profile):
                 self?.presenter.didLoadProfileSuccessfully(profile)
-            case .error(let description):
-                self?.presenter.didFailedWihtError(description)
+            case .error(let error):
+                self?.presenter.didFailedWihtError(error)
             }
         }
     }

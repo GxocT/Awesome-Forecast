@@ -35,6 +35,7 @@ class TodayViewController: BaseViewController {
 extension TodayViewController: TodayPresenterToViewProtocol {
     
     func showWeather(viewModel: TodayViewModel) {
+        hideError()
         hideThrobber()
         
         locationInfoLabel.text = viewModel.locationInfo
@@ -48,8 +49,10 @@ extension TodayViewController: TodayPresenterToViewProtocol {
     func showError(_ description: String) {
         hideThrobber()
         
-        // TODO: Прикрутить показ ошибки
-        print("Error: \(description)")
+        showError(description) { [weak self] in
+            self?.showThrobber()
+            self?.presenter.updateView()
+        }
     }
     
 }

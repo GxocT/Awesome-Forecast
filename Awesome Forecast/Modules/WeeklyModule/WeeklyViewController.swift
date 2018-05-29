@@ -60,7 +60,13 @@ extension WeeklyViewController: WeeklyPresenterToViewProtocol {
     }
     
     func showError(_ description: String) {
+        hideError()
+        hideThrobber()
         
+        showError(description) { [weak self] in
+            self?.showThrobber()
+            self?.presenter.updateView()
+        }
     }
     
 }

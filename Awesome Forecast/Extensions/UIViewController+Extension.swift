@@ -14,7 +14,11 @@ extension UIViewController {
         guard !view.hasSubviewOfType(ThrobberView.self) else { return }
         
         let throbberView = ThrobberView()
-        throbberView.backgroundColor = view.backgroundColor
+        if let bgColor = backgroundColor {
+            throbberView.backgroundColor = bgColor
+        } else {
+            throbberView.backgroundColor = view.backgroundColor
+        }
         throbberView.start()
         view.addSubview(throbberView)
         throbberView.fillSuperview()
@@ -26,12 +30,17 @@ extension UIViewController {
         view.removeSubviewsOfType(ThrobberView.self)
     }
     
-    func showError(_ description: String, updateClosure: VoidClosure?) {
+    func showError(_ description: String, backgroundColor: UIColor? = nil, updateClosure: VoidClosure?) {
         guard !view.hasSubviewOfType(ErrorView.self) else { return }
         
         let errorView = ErrorView()
         errorView.errorDescription = description
         errorView.updateClosure = updateClosure
+        if let bgColor = backgroundColor {
+            errorView.backgroundColor = bgColor
+        } else {
+            errorView.backgroundColor = view.backgroundColor
+        }
         
         view.addSubview(errorView)
         errorView.fillSuperview()

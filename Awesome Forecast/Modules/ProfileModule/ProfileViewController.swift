@@ -32,6 +32,7 @@ class ProfileViewController: BaseViewController {
 extension ProfileViewController: ProfilePresenterToViewProtocol {
     
     func showProfile(name: String, id: String) {
+        hideError()
         hideThrobber()
         
         nameLabel.text = name
@@ -39,7 +40,12 @@ extension ProfileViewController: ProfilePresenterToViewProtocol {
     }
     
     func showError(_ description: String) {
-        print("Error: \(description)")
+        hideThrobber()
+        
+        showError(description) { [weak self] in
+            self?.showThrobber()
+            self?.presenter.updateView()
+        }
     }
     
 }

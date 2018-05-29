@@ -17,6 +17,12 @@ class LocationManager: NSObject {
     static var shared = LocationManager()
     
     func getCurrentCity(completion: @escaping (ResponseResult<String>) -> ()) {
+        guard NetworkManager.isConnectionAvailable else {
+            let errorDescription = "No internet connection."
+            completion(.error(.network(errorDescription)))
+            ConsoleLogger.log(event: .fail, title: "Network", message: errorDescription)
+            return
+        }
         // TODO: проверять включен ли геосервис
         
         requestAuthIfNeeded()

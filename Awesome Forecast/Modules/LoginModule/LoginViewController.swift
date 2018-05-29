@@ -29,7 +29,10 @@ class LoginViewController: UIViewController {
 extension LoginViewController: LoginPresenterToViewProtocol {
     
     func showError(_ description: String) {
-        
+        let alert = UIAlertController(title: "Error", message: description, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
     
 }
