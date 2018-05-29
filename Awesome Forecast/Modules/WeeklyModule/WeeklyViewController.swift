@@ -42,10 +42,14 @@ extension WeeklyViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = WeelkyTableViewHeader()
+        let header = WeelkyTableViewHeader.instanceFromNib()
         header.title = locationInfo
         header.bgColor = view.backgroundColor
         return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(170)
     }
     
 }
@@ -53,6 +57,7 @@ extension WeeklyViewController: UITableViewDelegate, UITableViewDataSource {
 extension WeeklyViewController: WeeklyPresenterToViewProtocol {
     
     func showWeather(items: [WeeklyCellModel], locationInfo: String) {
+        hideError()
         cellItems = items
         self.locationInfo = locationInfo
         tableView.reloadData()
