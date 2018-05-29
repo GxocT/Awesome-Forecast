@@ -16,11 +16,16 @@ class LocationManager: NSObject {
     
     static var shared = LocationManager()
     
+    private struct Constants {
+        static let logTitle = NSLocalizedString("Log_title.Location", comment: "")
+    }
+    
     func getCurrentCity(completion: @escaping (ResponseResult<String>) -> ()) {
         guard NetworkManager.isConnectionAvailable else {
-            let errorDescription = "No internet connection."
+            let title = NSLocalizedString("Log_title.Network", comment: "")
+            let errorDescription = NSLocalizedString("Error.No_internet_connection", comment: "")
             completion(.error(.network(errorDescription)))
-            ConsoleLogger.log(event: .fail, title: "Network", message: errorDescription)
+            ConsoleLogger.log(event: .fail, title: title, message: errorDescription)
             return
         }
         // TODO: проверять включен ли геосервис
@@ -42,9 +47,9 @@ class LocationManager: NSObject {
             if let city = currentCity {
                 currentCityUpdatedCompletion?(.success(city))
             } else {
-                let errorDescription = "Unable to get current city."
+                let errorDescription = NSLocalizedString("Error.Unable_to_get_current_city", comment: "")
                 currentCityUpdatedCompletion?(.error(.location(errorDescription)))
-                ConsoleLogger.log(event: .fail, title: "Location", message: errorDescription)
+                ConsoleLogger.log(event: .fail, title: Constants.logTitle, message: errorDescription)
             }
         }
     }
@@ -82,13 +87,13 @@ extension LocationManager: CLLocationManagerDelegate {
         getPlacemark(by: location) { [weak self] (placemark) in
             guard let placemark = placemark else { return }
             
-            ConsoleLogger.log(event: .success, title: "Location", message: placemark.locality)
+            ConsoleLogger.log(event: .success, title: Constants.logTitle, message: placemark.locality)
             self?.currentCity = placemark.locality
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        ConsoleLogger.log(event: .fail, title: "Location", message: error.localizedDescription)
+        ConsoleLogger.log(event: .fail, title: Constants.logTitle, message: error.localizedDescription)
         currentCityUpdatedCompletion?(.error(.location(error.localizedDescription)))
     }
 }

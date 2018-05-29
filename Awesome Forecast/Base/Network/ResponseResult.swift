@@ -18,15 +18,16 @@ enum ResponseResult<T> {
 extension Result where T: Moya.Response {
     
     func convert<R: Decodable>(to resultType: R.Type) -> ResponseResult<R> {
-        let title = "Request"
+        let title = NSLocalizedString("Log_title.Response", comment: "")
+        let message: String = String(describing: resultType.self)
         switch self {
         case .success(let response):
             do {
                 let mapped = try response.map(R.self)
-                ConsoleLogger.log(event: .success, title: title)
+                ConsoleLogger.log(event: .success, title: title, message: message)
                 return ResponseResult.success(mapped)
             } catch {
-                ConsoleLogger.log(event: .fail, title: title)
+                ConsoleLogger.log(event: .fail, title: title, message: message)
                 return ResponseResult.error(.network(error.localizedDescription))
             }
         case .failure(let error):

@@ -9,7 +9,7 @@
 import Foundation
 
 enum LogEvent: String {
-    case open
+    case open = "Open"
     case pressButton = "Press button"
     case success = "Success"
     case fail = "Fail"
@@ -22,22 +22,17 @@ protocol Logger {
 class ConsoleLogger: Logger {
     
     static func log(event: LogEvent, title: String?, message: String? = nil) {
-        var toPrint = "Event: \(event.rawValue)"
+        var toPrint = String(format: NSLocalizedString("Logger.Event_%@", comment: ""), event.rawValue)
         if let title = title {
-            toPrint.append("\nTitle: \(title)")
+            toPrint.append("\n")
+            toPrint.append(String(format: NSLocalizedString("Logger.Title_%@", comment: ""), title))
         }
         if let message = message {
-            toPrint.append("\nMessage: \"\(message)\"")
+            toPrint.append("\n")
+            toPrint.append(String(format: NSLocalizedString("Logger.Message_%@", comment: ""), message))
         }
         
         print(toPrint)
     }
     
-}
-
-enum AppError {
-    case auth(String)
-    case network(String)
-    case location(String)
-    case unknow
 }

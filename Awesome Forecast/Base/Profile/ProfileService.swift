@@ -14,11 +14,13 @@ class ProfileService {
     func loadProfileInfo(completion: @escaping (ResponseResult<Profile>) -> ()) {
         FBSDKProfile.loadCurrentProfile { (profile, error) in
             guard let profile = profile else {
-                var description = "Unknown error."
+                var description = NSLocalizedString("Error.Unknown", comment: "")
                 if let error = error {
                     description = error.localizedDescription
                 }
-                ConsoleLogger.log(event: .fail, title: "Profile", message: description)
+                ConsoleLogger.log(event: .fail,
+                                  title: NSLocalizedString("Log_title.Profile", comment: ""),
+                                  message: description)
                 completion(.error(.network(description)))
                 return
             }

@@ -15,9 +15,9 @@ class FacebookAuthService: AuthService {
     
     func login(completion: @escaping (AuthService.AuthResult) -> ()) {
         loginManager.logIn(withReadPermissions: ["public_profile"],from: nil) { (result, error) in
-            let title = "Authorization"
+            let title = NSLocalizedString("Log_title.Authorization", comment: "")
             guard let result = result else {
-                var description = "Unknown error"
+                var description = NSLocalizedString("Error.Unknown", comment: "")
                 if let error = error {
                     description = error.localizedDescription
                 }
@@ -28,10 +28,10 @@ class FacebookAuthService: AuthService {
             }
             
             if result.isCancelled {
-                ConsoleLogger.log(event: .fail, title: title, message: "Cancelled")
+                ConsoleLogger.log(event: .fail, title: title, message: NSLocalizedString("Common.Cancelled", comment: ""))
             } else {
                 ConsoleLogger.log(event: .success, title: title)
-                completion(AuthResult.success("Success"))
+                completion(AuthResult.success(""))
             }
         }
     }

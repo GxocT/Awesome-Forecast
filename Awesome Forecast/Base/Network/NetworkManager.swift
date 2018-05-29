@@ -27,7 +27,7 @@ struct NetworkManager: Networkable {
         return NetworkReachabilityManager()?.isReachable ?? false
     }
     
-    let provider = MoyaProvider<ForecastApi>(plugins: [NetworkLoggerPlugin.init(verbose: true)])
+    let provider = MoyaProvider<ForecastApi>() // Logging: MoyaProvider<ForecastApi>(plugins: [NetworkLoggerPlugin.init(verbose: true)])
     
     func getCurrentWeather(city: String, completion: @escaping (ResponseResult<CurrentWeather>) -> ()) {
         request(target: .current(city: city), completion: completion)
@@ -39,8 +39,8 @@ struct NetworkManager: Networkable {
     
     private func request<T: Decodable>(target: ForecastApi, completion: @escaping (ResponseResult<T>) -> ()) {
         guard NetworkManager.isConnectionAvailable else {
-            let title = "Network"
-            let description = "No internet connection."
+            let title = NSLocalizedString("Log_title.Network", comment: "")
+            let description = NSLocalizedString("Error.No_internet_connection", comment: "")
             ConsoleLogger.log(event: .fail, title: title, message: description)
             completion(.error(.network(description)))
             return

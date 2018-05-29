@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  Awesome Forecast
+
+  Created by Sergey Bendak on 29/05/2018.
+  Copyright © 2018 Home. All rights reserved.
+*/
+
+// Tabs
+"Tab.Today" = "Today";
+"Tab.Weekly" = "Weekly";
+"Tab.Profile" = "Profile";
+
+// Common
+"Common.OK" = "OK";
+"Common.Error" = "Error";
+"Common.Network" = "Network";
+"Common.Response" = "Response";
+"Common.Cancelled" = "Cancelled";
+
+// Log Title
+"Log_title.Network" = "Network";
+"Log_title.Response" = "Response";
+"Log_title.Authorization" = "Authorization";
+"Log_title.Location" = "Location";
+"Log_title.Profile" = "Profile";
+
+// Error
+"Error.Unknown" = "Unknown error.";
+"Error.No_internet_connection" = "No internet connection.";
+"Error.Unable_to_get_current_city" = "Unable to get current city.";
+
+// Event
+"Event.Open" = "Open";
+"Event.Press_button" = "Press button";
+"Event.Success" = "Success";
+"Event.Fail" = "Fail";
+
+// Logger
+"Logger.Event_%@" = "Event: %@";
+"Logger.Title_%@" = "Title: %@";
+"Logger.Message_%@" = "Message: %@";

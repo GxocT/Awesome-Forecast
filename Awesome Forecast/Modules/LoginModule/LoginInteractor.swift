@@ -28,8 +28,8 @@ extension LoginInteractor: LoginPresenterToInterectorProtocol {
             switch result {
             case .success(_):
                 self.presenter.didLoginSuccessfully()
-            case .error(let description):
-                self.presenter.didFailWithError(description)
+            case .error(let err):
+                self.presenter.didFailWithError(err)
             }
         }
     }

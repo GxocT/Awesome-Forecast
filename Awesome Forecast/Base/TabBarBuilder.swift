@@ -16,17 +16,17 @@ enum TabBarBuilder {
         let tabBarController = UITabBarController()
         
         let todayViewController = TodayBuilder.buildModule(networkManager: networkManager)
-        todayViewController.title = "Today"
+        todayViewController.title = NSLocalizedString("Tab.Today", comment: "")
         todayViewController.tabBarItem.image = #imageLiteral(resourceName: "today_tab")
         
         let weeklyViewController = WeeklyBuilder.buildModule(networkManager: networkManager)
-        weeklyViewController.title = "Weekly"
+        weeklyViewController.title = NSLocalizedString("Tab.Weekly", comment: "")
         weeklyViewController.tabBarItem.image = #imageLiteral(resourceName: "week_tab")
         
         switch self {
         case .authorised:
             let profileViewController = ProfileBuilder.buildModule(authService: authService, pofileService: profileService)
-            profileViewController.title = "Profile"
+            profileViewController.title = NSLocalizedString("Tab.Profile", comment: "")
             profileViewController.tabBarItem.image = #imageLiteral(resourceName: "profile_tab")
             
             tabBarController.setViewControllers([todayViewController, weeklyViewController, profileViewController], animated: true)
