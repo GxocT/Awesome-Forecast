@@ -12,9 +12,9 @@ class TodayInteractor {
     
     weak var presenter: TodayInterectorToPresenterProtocol!
     
-    private let networkManager: NetworkManager
+    private let networkManager: Networkable
     
-    init(networkManager: NetworkManager) {
+    init(networkManager: Networkable) {
         self.networkManager = networkManager
     }
 }

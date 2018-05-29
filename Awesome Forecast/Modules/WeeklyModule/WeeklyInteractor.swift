@@ -12,9 +12,9 @@ class WeeklyInteractor {
     
     weak var presenter: WeeklyInterectorToPresenterProtocol!
     
-    private let networkManager: NetworkManager
+    private let networkManager: Networkable
     
-    init(networkManager: NetworkManager) {
+    init(networkManager: Networkable) {
         self.networkManager = networkManager
     }
 }

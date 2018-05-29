@@ -10,7 +10,7 @@ import UIKit
 
 final class WeeklyBuilder {
     
-    static func buildModule(networkManager: NetworkManager) -> WeeklyViewController {
+    static func buildModule(networkManager: Networkable) -> WeeklyViewController {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(type: WeeklyViewController.self)
         
         let presenter = WeeklyPresenter()

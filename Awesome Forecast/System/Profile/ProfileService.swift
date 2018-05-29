@@ -9,7 +9,11 @@
 import Foundation
 import FBSDKCoreKit
 
-class ProfileService {
+protocol ProfileService {
+    func loadProfileInfo(completion: @escaping (ResponseResult<Profile>) -> ())
+}
+
+class FacebookProfileService: ProfileService {
     
     func loadProfileInfo(completion: @escaping (ResponseResult<Profile>) -> ()) {
         FBSDKProfile.loadCurrentProfile { (profile, error) in

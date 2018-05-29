@@ -12,7 +12,7 @@ class ApplicationManager {
     
     private var networkManager = NetworkManager()
     private var authService = FacebookAuthService()
-    private var profileService = ProfileService()
+    private var profileService = FacebookProfileService()
     
     private var rootViewController: UIViewController? {
         didSet {
