@@ -169,6 +169,41 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4A1BCE0E20BDF84D008F9B89 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A5F709420B7D61700CFE35A /* Main.storyboard */,
+				4A5F709920B7D61800CFE35A /* LaunchScreen.storyboard */,
+				4A5F709C20B7D61800CFE35A /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4A1BCE0F20BDF877008F9B89 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4A5F709720B7D61800CFE35A /* Assets.xcassets */,
+				4A1BCE0620BDC948008F9B89 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4A1BCE1020BDF8A5008F9B89 /* ApplicationManager */ = {
+			isa = PBXGroup;
+			children = (
+				4A3D557A20BC93C5003784F2 /* ApplicationManager.swift */,
+			);
+			path = ApplicationManager;
+			sourceTree = "<group>";
+		};
+		4A1BCE1120BDF8B2008F9B89 /* AppearanceManager */ = {
+			isa = PBXGroup;
+			children = (
+				4AFEC8CF20BB4B6700AF8F38 /* AppearanceManager.swift */,
+			);
+			path = AppearanceManager;
+			sourceTree = "<group>";
+		};
 		4A3D556720BC76DA003784F2 /* ProfileModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,21 +230,21 @@
 			path = LoginModule;
 			sourceTree = "<group>";
 		};
-		4A3D557720BC934C003784F2 /* Base */ = {
+		4A3D557720BC934C003784F2 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				4A1BCE1020BDF8A5008F9B89 /* ApplicationManager */,
+				4A1BCE1120BDF8B2008F9B89 /* AppearanceManager */,
 				4A3D559020BCC581003784F2 /* Logger */,
-				4A3D557A20BC93C5003784F2 /* ApplicationManager.swift */,
-				4AFEC8CF20BB4B6700AF8F38 /* AppearanceManager.swift */,
-				4A5F70DF20BAB7FF00CFE35A /* TabBarBuilder.swift */,
-				4A3D559320BCC972003784F2 /* BaseViewController.swift */,
-				4A1BCE0820BDD0B3008F9B89 /* AppError.swift */,
 				4A5F70AD20B93F6900CFE35A /* Network */,
 				4A3D558820BCB559003784F2 /* Authorization */,
 				4A5F70BF20B9933000CFE35A /* Location */,
 				4A3D558B20BCC077003784F2 /* Profile */,
+				4A5F70DF20BAB7FF00CFE35A /* TabBarBuilder.swift */,
+				4A3D559320BCC972003784F2 /* BaseViewController.swift */,
+				4A1BCE0820BDD0B3008F9B89 /* AppError.swift */,
 			);
-			path = Base;
+			path = System;
 			sourceTree = "<group>";
 		};
 		4A3D558820BCB559003784F2 /* Authorization */ = {
@@ -258,18 +293,15 @@
 		4A5F708F20B7D61700CFE35A /* Awesome Forecast */ = {
 			isa = PBXGroup;
 			children = (
-				4A3D557720BC934C003784F2 /* Base */,
+				4A3D557720BC934C003784F2 /* System */,
 				4A5F70C020BA976B00CFE35A /* Modules */,
 				4A5F70A220B7DA1300CFE35A /* Models */,
 				4A5F70D520BAB53D00CFE35A /* Extensions */,
 				4A5F70EC20BAE12D00CFE35A /* CommonViews */,
 				4A5F70E920BADF3700CFE35A /* Utils */,
+				4A1BCE0E20BDF84D008F9B89 /* Supporting Files */,
+				4A1BCE0F20BDF877008F9B89 /* Resources */,
 				4A5F709020B7D61700CFE35A /* AppDelegate.swift */,
-				4A5F709420B7D61700CFE35A /* Main.storyboard */,
-				4A5F709720B7D61800CFE35A /* Assets.xcassets */,
-				4A5F709920B7D61800CFE35A /* LaunchScreen.storyboard */,
-				4A5F709C20B7D61800CFE35A /* Info.plist */,
-				4A1BCE0620BDC948008F9B89 /* Localizable.strings */,
 			);
 			path = "Awesome Forecast";
 			sourceTree = "<group>";
