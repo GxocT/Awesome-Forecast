@@ -26,7 +26,7 @@ extension TodayPresenter: TodayViewToPresenterProtocol {
 
 extension TodayPresenter: TodayInterectorToPresenterProtocol {
     
-    func weatherLoaded(weather: CurrentWeather, locationInfo: String) {
+    func didLoadWeather(_ weather: CurrentWeather, locationInfo: String) {
         let viewModel = TodayViewModel(locationInfo: locationInfo,
                                        weatherIcon: WeatherType(id: weather.weather?.id).getImage(),
                                        temperature: Int(weather.main.temp).temperatureStringPresentation(),
@@ -35,8 +35,13 @@ extension TodayPresenter: TodayInterectorToPresenterProtocol {
         view.showWeather(viewModel: viewModel)
     }
     
-    func weatherLoadFailed(description: String) {
-        view.showError(description)
+    func didFailWithError(_ error: AppError) {
+        switch error {
+        case .auth(let description), .location(let description), .network(let description):
+            view.showError(description)
+        default:
+            view.showError("Unknown error.")
+        }
     }
     
 }

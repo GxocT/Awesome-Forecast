@@ -23,7 +23,7 @@ protocol LoginPresenterToInterectorProtocol: class {
 
 protocol LoginInterectorToPresenterProtocol: class {
     func didLoginSuccessfully()
-    func didFailWithError(_ description: String)
+    func didFailWithError(_ error: AppError)
 }
 
 protocol LoginPresenterToRouterProtocol: class {

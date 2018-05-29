@@ -23,7 +23,7 @@ protocol WeeklyPresenterToInterectorProtocol: class {
 
 protocol WeeklyInterectorToPresenterProtocol: class {
     func weatherLoaded(_ weekly: WeeklyWeather)
-    func weatherLoadFailed(description: String)
+    func weatherLoadFailed(error: AppError)
 }
 
 protocol WeeklyPresenterToRouterProtocol: class {

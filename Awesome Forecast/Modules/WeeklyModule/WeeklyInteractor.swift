@@ -30,11 +30,11 @@ extension WeeklyInteractor: WeeklyPresenterToInterectorProtocol {
                     case .success(let weather):
                         self?.presenter.weatherLoaded(weather)
                     case .error(let error):
-                        self?.presenter.weatherLoadFailed(description: error)
+                        self?.presenter.weatherLoadFailed(error: error)
                     }
                 }
             case .error(let error):
-                self?.presenter.weatherLoadFailed(description: error)
+                self?.presenter.weatherLoadFailed(error: error)
             }
         }
     }

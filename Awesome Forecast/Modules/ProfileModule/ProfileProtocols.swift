@@ -25,7 +25,7 @@ protocol ProfilePresenterToInterectorProtocol: class {
 
 protocol ProfileInterectorToPresenterProtocol: class {
     func didLoadProfileSuccessfully(_ profile: Profile)
-    func didFailedWihtError(_ description: String)
+    func didFailedWihtError(_ error: AppError)
     func didLogout()
 }
 

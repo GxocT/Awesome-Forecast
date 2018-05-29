@@ -24,6 +24,8 @@
 		4A3D558A20BCB5EF003784F2 /* FacebookAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D558920BCB5EF003784F2 /* FacebookAuthService.swift */; };
 		4A3D558D20BCC08F003784F2 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D558C20BCC08F003784F2 /* ProfileService.swift */; };
 		4A3D558F20BCC280003784F2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D558E20BCC280003784F2 /* Profile.swift */; };
+		4A3D559220BCC592003784F2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D559120BCC592003784F2 /* Logger.swift */; };
+		4A3D559420BCC972003784F2 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3D559320BCC972003784F2 /* BaseViewController.swift */; };
 		4A5F709120B7D61700CFE35A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F709020B7D61700CFE35A /* AppDelegate.swift */; };
 		4A5F709620B7D61700CFE35A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5F709420B7D61700CFE35A /* Main.storyboard */; };
 		4A5F709820B7D61800CFE35A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A5F709720B7D61800CFE35A /* Assets.xcassets */; };
@@ -90,6 +92,8 @@
 		4A3D558920BCB5EF003784F2 /* FacebookAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuthService.swift; sourceTree = "<group>"; };
 		4A3D558C20BCC08F003784F2 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		4A3D558E20BCC280003784F2 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		4A3D559120BCC592003784F2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		4A3D559320BCC972003784F2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4A5F708D20B7D61700CFE35A /* Awesome Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Awesome Forecast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5F709020B7D61700CFE35A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A5F709520B7D61700CFE35A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -188,9 +192,11 @@
 		4A3D557720BC934C003784F2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				4A3D559020BCC581003784F2 /* Logger */,
 				4A3D557A20BC93C5003784F2 /* ApplicationManager.swift */,
 				4AFEC8CF20BB4B6700AF8F38 /* AppearanceManager.swift */,
 				4A5F70DF20BAB7FF00CFE35A /* TabBarBuilder.swift */,
+				4A3D559320BCC972003784F2 /* BaseViewController.swift */,
 				4A5F70AD20B93F6900CFE35A /* Network */,
 				4A3D558820BCB559003784F2 /* Authorization */,
 				4A5F70BF20B9933000CFE35A /* Location */,
@@ -214,6 +220,14 @@
 				4A3D558C20BCC08F003784F2 /* ProfileService.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		4A3D559020BCC581003784F2 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				4A3D559120BCC592003784F2 /* Logger.swift */,
+			);
+			path = Logger;
 			sourceTree = "<group>";
 		};
 		4A5F708420B7D61700CFE35A = {
@@ -544,6 +558,7 @@
 				4A5F70E020BAB7FF00CFE35A /* TabBarBuilder.swift in Sources */,
 				4A5F70DA20BAB6A900CFE35A /* WeeklyPresenter.swift in Sources */,
 				4A5F70C720BA981300CFE35A /* TodayInteractor.swift in Sources */,
+				4A3D559420BCC972003784F2 /* BaseViewController.swift in Sources */,
 				4A3D558520BCA375003784F2 /* ProfileRouter.swift in Sources */,
 				4A3D557420BC89B0003784F2 /* LoginProtocols.swift in Sources */,
 				4A5F70A420B7DAA400CFE35A /* CurrentWeather.swift in Sources */,
@@ -560,6 +575,7 @@
 				4A5F70BC20B9731900CFE35A /* WeeklyItem.swift in Sources */,
 				4A5F70DB20BAB6AD00CFE35A /* WeeklyInteractor.swift in Sources */,
 				4A5F70C320BA97A800CFE35A /* TodayViewController.swift in Sources */,
+				4A3D559220BCC592003784F2 /* Logger.swift in Sources */,
 				4A3D556C20BC824C003784F2 /* LoginViewController.swift in Sources */,
 				4A5F70CB20BA983B00CFE35A /* TodayProtocols.swift in Sources */,
 				4A3D558F20BCC280003784F2 /* Profile.swift in Sources */,

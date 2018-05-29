@@ -25,6 +25,7 @@ extension WeeklyPresenter: WeeklyViewToPresenterProtocol {
 }
 
 extension WeeklyPresenter: WeeklyInterectorToPresenterProtocol {
+    
     func weatherLoaded(_ weekly: WeeklyWeather) {
         
         let items = weekly.list
@@ -41,7 +42,12 @@ extension WeeklyPresenter: WeeklyInterectorToPresenterProtocol {
         self.view.showWeather(items: items, locationInfo: weekly.city.name)
     }
     
-    func weatherLoadFailed(description: String) {
-        
+    func weatherLoadFailed(error: AppError) {
+        switch error {
+        case .auth(let description), .location(let description), .network(let description):
+            view.showError(description)
+        default:
+            view.showError("Unknown error.")
+        }
     }
 }

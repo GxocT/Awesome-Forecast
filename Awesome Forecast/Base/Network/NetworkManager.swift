@@ -8,9 +8,12 @@
 
 import Foundation
 import Moya
+import Alamofire
 
 protocol Networkable {
     var provider: MoyaProvider<ForecastApi> { get }
+    
+    static var isConnectionAvailable: Bool { get }
     
     func getCurrentWeather(city: String, completion: @escaping (ResponseResult<CurrentWeather>) -> ())
     func getWeeklyWeather(city: String, completion: @escaping (ResponseResult<WeeklyWeather>) -> ())
@@ -20,19 +23,34 @@ struct NetworkManager: Networkable {
     
     static let apiKey = "d22191f992a49caade08ff3888b4c003"
     
+    static var isConnectionAvailable: Bool {
+        return NetworkReachabilityManager()?.isReachable ?? false
+    }
+    
     let provider = MoyaProvider<ForecastApi>(plugins: [NetworkLoggerPlugin.init(verbose: true)])
     
     func getCurrentWeather(city: String, completion: @escaping (ResponseResult<CurrentWeather>) -> ()) {
-        provider.request(.current(city: city)) { (result) in
-            completion(result.convert(to: CurrentWeather.self))
-        }
+        request(target: .current(city: city), completion: completion)
     }
     
     func getWeeklyWeather(city: String, completion: @escaping (ResponseResult<WeeklyWeather>) -> ()) {
-        provider.request(.weekly(city: city)) { (result) in
-            completion(result.convert(to: WeeklyWeather.self))
+        request(target: .weekly(city: city), completion: completion)
+    }
+    
+    private func request<T: Decodable>(target: ForecastApi, completion: @escaping (ResponseResult<T>) -> ()) {
+        guard NetworkManager.isConnectionAvailable else {
+            let title = "Network"
+            let description = "No internet connection."
+            ConsoleLogger.log(event: .fail, title: title, message: description)
+            completion(.error(.network(description)))
+            return
+        }
+        
+        provider.request(target) { (result) in
+            completion(result.convert(to: T.self))
         }
     }
+    
     
 }
 

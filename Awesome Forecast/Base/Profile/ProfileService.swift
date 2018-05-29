@@ -18,7 +18,8 @@ class ProfileService {
                 if let error = error {
                     description = error.localizedDescription
                 }
-                completion(.error(description))
+                ConsoleLogger.log(event: .fail, title: "Profile", message: description)
+                completion(.error(.network(description)))
                 return
             }
             

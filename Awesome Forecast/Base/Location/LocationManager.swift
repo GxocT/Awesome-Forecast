@@ -36,7 +36,9 @@ class LocationManager: NSObject {
             if let city = currentCity {
                 currentCityUpdatedCompletion?(.success(city))
             } else {
-                currentCityUpdatedCompletion?(.error("Unable to get current city."))
+                let errorDescription = "Unable to get current city."
+                currentCityUpdatedCompletion?(.error(.location(errorDescription)))
+                ConsoleLogger.log(event: .fail, title: "Location", message: errorDescription)
             }
         }
     }
@@ -74,13 +76,13 @@ extension LocationManager: CLLocationManagerDelegate {
         getPlacemark(by: location) { [weak self] (placemark) in
             guard let placemark = placemark else { return }
             
+            ConsoleLogger.log(event: .success, title: "Location", message: placemark.locality)
             self?.currentCity = placemark.locality
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
-        
-        currentCityUpdatedCompletion?(.error(error.localizedDescription))
+        ConsoleLogger.log(event: .fail, title: "Location", message: error.localizedDescription)
+        currentCityUpdatedCompletion?(.error(.location(error.localizedDescription)))
     }
 }

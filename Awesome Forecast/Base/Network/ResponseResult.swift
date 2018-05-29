@@ -12,25 +12,30 @@ import Moya
 
 enum ResponseResult<T> {
     case success(T)
-    case error(String)
+    case error(AppError)
 }
 
 extension Result where T: Moya.Response {
     
     func convert<R: Decodable>(to resultType: R.Type) -> ResponseResult<R> {
+        let title = "Request"
         switch self {
         case .success(let response):
             do {
                 let mapped = try response.map(R.self)
+                ConsoleLogger.log(event: .success, title: title)
                 return ResponseResult.success(mapped)
             } catch {
-                return ResponseResult.error(error.localizedDescription)
+                ConsoleLogger.log(event: .fail, title: title)
+                return ResponseResult.error(.network(error.localizedDescription))
             }
         case .failure(let error):
             if let moyaError = error as? MoyaError, let errorString = moyaError.errorDescription {
-                return ResponseResult.error(errorString)
+                ConsoleLogger.log(event: .fail, title: title, message: errorString)
+                return ResponseResult.error(.network(errorString))
             } else {
-                return ResponseResult.error(error.localizedDescription)
+                ConsoleLogger.log(event: .fail, title: title, message: error.localizedDescription)
+                return ResponseResult.error(.network(error.localizedDescription))
             }
         }
     }

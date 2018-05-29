@@ -34,8 +34,13 @@ extension ProfilePresenter: ProfileInterectorToPresenterProtocol {
         view.showProfile(name: profile.name, id: profile.id)
     }
     
-    func didFailedWihtError(_ description: String) {
-        view.showError(description)
+    func didFailedWihtError(_ error: AppError) {
+        switch error {
+        case .auth(let description), .location(let description), .network(let description):
+            view.showError(description)
+        default:
+            view.showError("Unknown error.")
+        }
     }
     
     func didLogout() {

@@ -34,8 +34,13 @@ extension LoginPresenter: LoginInterectorToPresenterProtocol {
         router.openAuthorizedScreen()
     }
     
-    func didFailWithError(_ description: String) {
-        view.showError(description)
+    func didFailWithError(_ error: AppError) {
+        switch error {
+        case .auth(let description), .location(let description), .network(let description):
+            view.showError(description)
+        default:
+            view.showError("Unknown error.")
+        }
     }
     
 }

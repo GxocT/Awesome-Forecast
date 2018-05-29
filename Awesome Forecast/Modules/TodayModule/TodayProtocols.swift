@@ -22,8 +22,8 @@ protocol TodayPresenterToInterectorProtocol: class {
 }
 
 protocol TodayInterectorToPresenterProtocol: class {
-    func weatherLoaded(weather: CurrentWeather, locationInfo: String)
-    func weatherLoadFailed(description: String)
+    func didLoadWeather(_ weather: CurrentWeather, locationInfo: String)
+    func didFailWithError(_ error: AppError)
 }
 
 protocol TodayPresenterToRouterProtocol: class {
