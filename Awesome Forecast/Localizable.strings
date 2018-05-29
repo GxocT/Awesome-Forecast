@@ -29,12 +29,10 @@
 "Error.Unknown" = "Unknown error.";
 "Error.No_internet_connection" = "No internet connection.";
 "Error.Unable_to_get_current_city" = "Unable to get current city.";
+"Error.Location_service_disabled" = "Location service disabled.";
 
-// Event
-"Event.Open" = "Open";
-"Event.Press_button" = "Press button";
-"Event.Success" = "Success";
-"Event.Fail" = "Fail";
+// Error details
+"Error_details.Enable_location_service" = "Try to enable location service and press update button.";
 
 // Logger
 "Logger.Event_%@" = "Event: %@";

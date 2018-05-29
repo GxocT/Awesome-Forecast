@@ -50,14 +50,15 @@ class ErrorView: UIView {
         
         textLabel = UILabel()
         textLabel.textAlignment = .center
-        textLabel.textColor = .darkGray
-        textLabel.font = UIFont.systemFont(ofSize: 15)
+        textLabel.textColor = .white
+        textLabel.font = UIFont.systemFont(ofSize: 18)
+        textLabel.numberOfLines = 0
         container.addSubview(textLabel)
         
         updateButton = UIButton()
         updateButton.setTitle("Update", for: .normal)
-        updateButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        updateButton.setTitleColor(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), for: .normal)
+        updateButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 21)
+        updateButton.setTitleColor(.white, for: .normal)
         updateButton.addTarget(self, action: #selector(updateAction), for: .touchUpInside)
         container.addSubview(updateButton)
     }

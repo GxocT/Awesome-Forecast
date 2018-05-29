@@ -28,15 +28,22 @@ class LocationManager: NSObject {
             ConsoleLogger.log(event: .fail, title: title, message: errorDescription)
             return
         }
-        // TODO: проверять включен ли геосервис
         
         requestAuthIfNeeded()
         
-        if let currentCity = currentCity {
-            completion(.success(currentCity))
+        if CLLocationManager.locationServicesEnabled() {
+            if let currentCity = currentCity {
+                completion(.success(currentCity))
+            } else {
+                currentCityUpdatedCompletion = completion
+                manager.requestLocation()
+            }
         } else {
-            currentCityUpdatedCompletion = completion
-            manager.requestLocation()
+            let error = NSLocalizedString("Error.Location_service_disabled", comment: "")
+            let details = NSLocalizedString("Error_details.Enable_location_service", comment: "")
+            let fullErrorMessage = String(format: "%@\n%@", error, details)
+            completion(.error(.network(fullErrorMessage)))
+            ConsoleLogger.log(event: .fail, title: Constants.logTitle, message: error)
         }
     }
     
