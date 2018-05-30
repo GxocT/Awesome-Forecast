@@ -15,6 +15,8 @@ iOS applications, Swift 3+ must be used.
 * Use Interface Builder and Auto-layouts for UI
 * Use iOS architecture that works better for team development
 * You are free to use any frameworks or libraries that you see fit.
+## Result
+<p>
 <p>
 <img width="200" alt="portfolio_view" src="https://pp.userapi.com/c846120/v846120951/678c0/1JHfXiWXTfo.jpg">
 <img width="200" alt="portfolio_view" src="https://pp.userapi.com/c846120/v846120951/678ca/szkqPyFAyGs.jpg">
